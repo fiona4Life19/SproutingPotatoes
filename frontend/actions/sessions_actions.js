@@ -4,10 +4,12 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const SIGNOUT_CURRENT_USER = "SIGNOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
-const receiveCurrentUser = currentUser => ({
-    type: RECEIVE_CURRENT_USER, 
+const receiveCurrentUser = currentUser => {
+    debugger
+    return { type: RECEIVE_CURRENT_USER, 
     currentUser 
-})
+    }
+}
 
 const signoutCurrentUser = () => ({
     type: SIGNOUT_CURRENT_USER, 
@@ -34,8 +36,8 @@ export const signin = user => dispatch => (
 )
 
 export const signout = () => dispatch => ( 
-    APIUtil.signout().then( () =>  ( 
-        dispatch(signoutCurrentUser(user))
+    APIUtil.signout().then( (user) =>  ( 
+        dispatch(signoutCurrentUser())
     ))
 )
 

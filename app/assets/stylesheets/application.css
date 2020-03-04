@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ .nav {
+     float: right;
+     display: flex;
+     justify-content: flex-end;
+ }
+
+ .logo {
+     width: 5px;
+     height: 5px;
+ }
+
+ .greeting {
+     float: right;
+     display: flex;
+     justify-content: flex-end;
+ }
+
+
