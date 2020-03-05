@@ -11,12 +11,19 @@ class Signup extends React.Component {
             password: "",
         }
 
+        this.handleDemoUser = this.handleDemoUser.bind(this)
         this.handlesubmit = this.handlesubmit.bind(this)
     }
 
     handlesubmit(e) {
         e.preventDefault()
         this.props.signup(this.state)
+            .then(() => this.props.history.push("/"))
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault()
+        this.props.signin({email: "ASEbuzz@aol.com", password: "password", first_name: "Aaron", last_name: "Baum" })
             .then(() => this.props.history.push("/"))
     }
 
@@ -65,7 +72,7 @@ class Signup extends React.Component {
                         {error_messages}
                     </div>
 
-                    <button onClick={this.props.demoUser}>Demo User</button> 
+                    <button onClick={this.handleDemoUser}>Demo User</button> 
                 </form>
             </div>
         )
