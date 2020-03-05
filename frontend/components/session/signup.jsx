@@ -35,7 +35,6 @@ class Signup extends React.Component {
                 <h2>Sign Up for Sprouting Potatoes!</h2>
                 <form>
                     <br/>
-                    {/* Please Sign In or {this.props.navLink} */}
                     <label>First Name:
                         <input type="text" 
                                value={this.state.first_name} 

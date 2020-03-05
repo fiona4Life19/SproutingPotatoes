@@ -8,13 +8,19 @@ class Signin extends React.Component {
             email: "",
             password: ""
         }
-
+        this.handleDemoUser = this.handleDemoUser.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault()
         this.props.signin(this.state)
+            .then( () => this.props.history.push("/"))
+    }
+
+    handleDemoUser(e) {
+        e.preventDefault()
+        this.props.signin({email: "ASEbuzz@aol.com", password: "password"})
             .then( () => this.props.history.push("/"))
     }
 
@@ -55,7 +61,7 @@ class Signin extends React.Component {
                     </div>
 
                     <div>
-                        <button onClick={this.props.demoUser}>Demo User</button>
+                        <button onClick={this.handleDemoUser}>Demo User</button>
                     </div>
 
                 </form>
