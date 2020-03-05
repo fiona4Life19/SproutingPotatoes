@@ -1,5 +1,6 @@
-import {connect} from "react-redux"
-import {signout} from "../../actions/sessions_actions"
+import { connect } from "react-redux"
+import { signout } from "../../actions/sessions_actions"
+import { openModal } from "../../actions/modal_actions"
 import Greeting from "./greeting"
 
 
@@ -8,7 +9,8 @@ const mSTP = (state) => ({
 })
 
 const mDTP = (dispatch) => ({
-    signout: () => dispatch(signout())
+    signout: () => dispatch(signout()),
+    openModal: modal => dispatch(openModal(modal))
 })
 
 

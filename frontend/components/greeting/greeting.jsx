@@ -1,20 +1,18 @@
 import React from "react"
-import {Link} from "react-router-dom"
-import {Redirect} from "react-router-dom"
 
 
-    const Greeting = ({currentUser, signout}) => {
+    const Greeting = ({currentUser, signout, openModal}) => {
         const session_links = () => (
-            <nav className="nav">
-                <Link className="signin" to="/signin">Sign In!</Link>
-                 &nbsp;&nbsp; &nbsp;&nbsp;
-                <Link className="signin" to="/signup">Sign Up!</Link>
+            <nav className="signin-signup">
+                <button onClick={ () => openModal('signin')}>Sign In</button>                 
+                    &nbsp;&nbsp; &nbsp;&nbsp;
+                <button onClick={ () => openModal('signup')}>Sign Up</button>
             </nav>
         ); 
         const personalGreeting = () => (
             <hgroup className="greeting"> 
-                <h1>Hi! {currentUser.first_name}</h1> 
-                <button className="logout" onClick={signout}>Sign out</button>
+                <h3>Hi! {currentUser.first_name}</h3> 
+                <button className="signout-button" onClick={signout}>Sign out</button>
             </hgroup>
         )
 

@@ -15,16 +15,14 @@ class Signin extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.signin(this.state)
-            .then( () => this.props.history.push("/"))
+            .then(this.props.closeModal)
     }
 
     handleDemoUser(e) {
         e.preventDefault()
         this.props.signin({email: "ASEbuzz@aol.com", password: "password"})
-            .then( () => this.props.history.push("/"))
+            .then(this.props.closeModal)
     }
-
-    
 
     update(field) {
         return e => {
@@ -32,28 +30,28 @@ class Signin extends React.Component {
         }
     }
 
-
-
     render() {
         let errorMessages = this.props.errors.map(err => <div>{ err }</div>)
         return (
             <div className="signin-form">
                 <h2>Sign in to Sprouting Potatoes!</h2>
                 <br/>
-                
+                Please Sign In or {this.props.signupButton}
                 <form >
                     <label>Email:
                         <input type="text"
                             value={this.state.first_name}
                             onChange={this.update("email")} />
                     </label>
+                    <br/>
                     <label>Password:
                         <input type="password"
                             value={this.state.last_name}
                             onChange={this.update("password")} />
                     </label>
                     
-                    <button onClick={this.handleSubmit}>Sign in!</button>
+                    <button className="btn"  onClick={this.handleSubmit}>Sign Up!
+                    </button>
                     <br/>
 
                     <div>
@@ -61,15 +59,14 @@ class Signin extends React.Component {
                     </div>
 
                     <div>
-                        <button onClick={this.handleDemoUser}>Demo User</button>
+                        <button className="btn" onClick={this.handleDemoUser}
+                        >Demo User</button>
                     </div>
 
                 </form>
             </div>
         )
-
     }
-
 }
 
 export default Signin

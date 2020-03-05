@@ -13,18 +13,24 @@ class Signup extends React.Component {
 
         this.handleDemoUser = this.handleDemoUser.bind(this)
         this.handlesubmit = this.handlesubmit.bind(this)
+        // this.openModal = this.openModal.bind(this)
     }
 
     handlesubmit(e) {
         e.preventDefault()
         this.props.signup(this.state)
-            .then(() => this.props.history.push("/"))
+            .then(this.props.closeModal)
+            
     }
 
     handleDemoUser(e) {
         e.preventDefault()
-        this.props.signin({email: "ASEbuzz@aol.com", password: "password", first_name: "Aaron", last_name: "Baum" })
-            .then(() => this.props.history.push("/"))
+        this.props.signin({email: "ASEbuzz@aol.com", 
+                           password: "password", 
+                           first_name: "Aaron", 
+                           last_name: "Baum" })
+            .then(this.props.closeModal)
+            
     }
 
     update(field) {
@@ -33,20 +39,21 @@ class Signup extends React.Component {
         }
     }
 
-
-
     render() {
-        const error_messages = this.props.errors.map( (err) => <div>{err}</div> )
+        const error_messages = this.props.errors.map( (err) => <div>{err}</div>)
         return(
             <div className="signup-form">
-                <h2>Sign Up for Sprouting Potatoes!</h2>
+                <h2>Sign up for Sprouting Potatoes!</h2>
                 <form>
+                    <br/>
+                    Please Sign Up or {this.props.signinButton}
                     <br/>
                     <label>First Name:
                         <input type="text" 
                                value={this.state.first_name} 
                                onChange={this.update('first_name')}/>
                     </label>
+                    <br/>
                     <label>Last Name:
                         <input type="text" 
                                value={this.state.last_name} 
@@ -66,13 +73,15 @@ class Signup extends React.Component {
                     </label>
                     <br/>
 
-                    <button onClick={this.handlesubmit}>Sign up!</button>
+                    <button className="btn" onClick={this.handlesubmit}>Sign up!
+                    </button>
 
                     <div>
                         {error_messages}
                     </div>
 
-                    <button onClick={this.handleDemoUser}>Demo User</button> 
+                    <button className="btn" 
+                    onClick={this.handleDemoUser}>Demo User</button> 
                 </form>
             </div>
         )
