@@ -9,14 +9,16 @@ class Signin extends React.Component {
             password: ""
         }
 
-        this.handleSubmit = this.handlesubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handlesubmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
         this.props.signin(this.state)
             .then( () => this.props.history.push("/"))
     }
+
+    
 
     update(field) {
         return e => {
@@ -47,10 +49,13 @@ class Signin extends React.Component {
                     
                     <button onClick={this.handleSubmit}>Sign in!</button>
                     <br/>
-                    {/* {this.props.errors} */}
 
                     <div>
                         {errorMessages}
+                    </div>
+
+                    <div>
+                        <button onClick={this.props.demoUser}>Demo User</button>
                     </div>
 
                 </form>

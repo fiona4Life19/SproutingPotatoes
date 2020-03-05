@@ -65,6 +65,8 @@ class Signup extends React.Component {
                     <div>
                         {error_messages}
                     </div>
+
+                    <button onClick={this.props.demoUser}>Demo User</button> 
                 </form>
             </div>
         )

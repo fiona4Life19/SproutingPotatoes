@@ -10,7 +10,8 @@ const mSTP = ({errors}) => ({
 })
 
 const mDTP = dispatch => ({
-    signin: (user) => dispatch(signin(user))
+    signin: (user) => dispatch(signin(user)),
+    demoUser: () => dispatch(signin({email: "ASEbuzz@aol.com", password: "password"}))
 })
 
 export default connect(mSTP, mDTP)(Signin)

@@ -1,8 +1,6 @@
 import {connect} from "react-redux"
-import React from "react"
-import {Link} from "react-router-dom"
 import {signup} from "../../actions/sessions_actions"
-import SessionForm from "./signup"
+import Signup from "./signup"
 
 
 const mSTP = ({errors}) => ({
@@ -10,7 +8,12 @@ const mSTP = ({errors}) => ({
 })
 
 const mDTP = (dispatch) => ({ 
-    signup: (user) => dispatch(signup(user))
+    signup: (user) => dispatch(signup(user)),
+    demoUser: () => dispatch(signup({ 
+                                    email: "ASEbuzz@aol.com", 
+                                    password: "password", 
+                                    first_name: "Aaron", 
+                                    lastName: "Baum" }))
 })
 
-export default connect(mSTP, mDTP)(SessionForm)
+export default connect(mSTP, mDTP)(Signup)
