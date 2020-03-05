@@ -4,7 +4,7 @@ import Greeting from "./greeting"
 
 
 const mSTP = (state) => ({
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mDTP = (dispatch) => ({

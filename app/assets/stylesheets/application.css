@@ -18,21 +18,46 @@
      float: right;
      display: flex;
      justify-content: flex-end;
+     background-color: rgb(241, 15, 15);
  }
 
- .logo {
-     width: 5px;
-     height: 5px;
- }
 
  .greeting {
      float: right;
      display: flex;
      justify-content: flex-end;
+     align-items: center;
  }
 
  .header-logo {
-     background-image: url("https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/RT_TwitterCard_2018.jpg");
+     font: bold;
+     background-color: rgb(241, 15, 15);
+     color: white;
+     text-decoration: none;
+     display: flex; 
+     align-items: center
+ }
+
+ .signin {
+     font: bold;
+     color: white;
+     text-decoration: none;
+ }
+
+ .home {
+    font: bold;
+     color: white;
+     text-decoration: none;
+ }
+
+ .greeting > * {
+     background-color: rgb(241, 15, 15);
+     color: white
+ }
+
+ .logout{
+    cursor: pointer;
+    font-size: 30px;
  }
 
 

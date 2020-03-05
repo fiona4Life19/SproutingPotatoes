@@ -6,8 +6,7 @@ import React from "react"
 
 
 const mSTP = ({errors}) => ({
-    errors: errors.session,
-    navLink: <Link to="/signup" > Please, create an account :)</Link>
+    errors: errors.session
 })
 
 const mDTP = dispatch => ({

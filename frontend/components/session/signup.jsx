@@ -26,21 +26,10 @@ class Signup extends React.Component {
         }
     }
 
-    // render() {
-    //     return(
-    //         <ul>
-    //             {
-    //             this.props.errors((error, message) => ( 
-    //                 <li key={`error-${message}`}>
-    //                     {error}
-    //                 </li>
-    //             ))
-    //             }
-    //         </ul>
-    //     )
-    // }
+
 
     render() {
+        const error_messages = this.props.errors.map( (err) => <div>{err}</div> )
         return(
             <div className="signup-form">
                 <h2>Sign Up for Sprouting Potatoes!</h2>
@@ -70,10 +59,12 @@ class Signup extends React.Component {
                                onChange={this.update("password")}/>
                     </label>
                     <br/>
-                    
-                    {this.props.errors}
 
                     <button onClick={this.handlesubmit}>Sign up!</button>
+
+                    <div>
+                        {error_messages}
+                    </div>
                 </form>
             </div>
         )

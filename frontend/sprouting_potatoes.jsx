@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 // import {signup} from './actions/sessions_actions'
 import configureStore from "./store/store";
 import Root from "./components/root"
-
+// debugger
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
     }
+    // debugger
     const store = configureStore(preloadedState)
     ReactDOM.render(<Root store={store}/>, root);
 

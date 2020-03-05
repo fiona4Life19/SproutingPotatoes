@@ -24,19 +24,10 @@ class Signin extends React.Component {
         }
     }
 
-    // renderErrors() {
-    //     <ul>
-    //         {
-    //         this.props.errors.map( (error, i) => (
-    //             <li key={`error-${i}`}>
-    //                 {error}
-    //             </li>
-    //         ))
-    //         }
-    //     </ul>
-    // }
+
 
     render() {
+        let errorMessages = this.props.errors.map(err => <div>{ err }</div>)
         return (
             <div className="signin-form">
                 <h2>Sign in to Sprouting Potatoes!</h2>
@@ -56,7 +47,11 @@ class Signin extends React.Component {
                     
                     <button onClick={this.handleSubmit}>Sign in!</button>
                     <br/>
-                    {this.props.errors}
+                    {/* {this.props.errors} */}
+
+                    <div>
+                        {errorMessages}
+                    </div>
 
                 </form>
             </div>
