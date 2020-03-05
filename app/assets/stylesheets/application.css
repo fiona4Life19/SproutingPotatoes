@@ -31,4 +31,8 @@
      justify-content: flex-end;
  }
 
+ .header-logo {
+     background-image: url("https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/RT_TwitterCard_2018.jpg");
+ }
+
 

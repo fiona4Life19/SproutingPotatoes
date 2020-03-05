@@ -7,6 +7,10 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.9.0"
+  },
   "dependencies": {
     "babel-loader": "^8.0.6",
     "react": "^16.13.0",
@@ -22,7 +26,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",

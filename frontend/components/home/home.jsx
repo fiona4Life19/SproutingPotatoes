@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 const Home = () => (
     <div className="home" >
-        <h1 className="title">Sprouting Potatoes</h1>
+        <Link to="/" className="header-logo">Sprouting Potatoes </Link>
         <div>
             <img className="Logo" src="https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/RT_TwitterCard_2018.jpg" />
         </div>
