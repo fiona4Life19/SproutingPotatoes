@@ -33,37 +33,45 @@ class Signin extends React.Component {
     render() {
         let errorMessages = this.props.errors.map(err => <div>{ err }</div>)
         return (
-            <div className="signin-form">
-                <h2>Sign in to Sprouting Potatoes!</h2>
-                <br/>
-                Please Sign In or {this.props.signupButton}
-                <form >
-                    <label>Email:
-                        <input type="text"
-                            value={this.state.first_name}
-                            onChange={this.update("email")} />
-                    </label>
-                    <br/>
-                    <label>Password:
-                        <input type="password"
-                            value={this.state.last_name}
-                            onChange={this.update("password")} />
-                    </label>
-                    
-                    <button className="btn"  onClick={this.handleSubmit}>Sign Up!
-                    </button>
-                    <br/>
-
-                    <div>
-                        {errorMessages}
+            <div>
+            <div className="modal-form"> 
+                    <h2 className="modal-header">Sign in to Sprouting Potatoes!</h2>
+                <div className="form-content">
+                        Please Sign In or  &nbsp;&nbsp;
+                    {this.props.signupButton}
+                        <br />
+                        <br />
+                        <form >
+                            <label>Email:
+                            <br/>
+                                <input className="modal-field" type="text"
+                                value={this.state.first_name}
+                                onChange={this.update("email")} />
+                            </label>
+                            <br/>
+                            <br />
+                            <label>Password:
+                            <br/>
+                                <input className="modal-field" type="password"
+                                    value={this.state.last_name}
+                                    onChange={this.update("password")} />
+                            </label>
+                            <br/>
+                            <br/>
+                                <button className="modal-btn"  onClick={this.handleSubmit}>Sign In!
+                                </button>
+                            <br/>
+                            <div>
+                                {errorMessages}
+                            </div>
+                            <br/>
+                            <div>
+                                <button className="modal-btn" onClick={this.handleDemoUser}
+                                >Demo User</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div>
-                        <button className="btn" onClick={this.handleDemoUser}
-                        >Demo User</button>
-                    </div>
-
-                </form>
+                </div>
             </div>
         )
     }

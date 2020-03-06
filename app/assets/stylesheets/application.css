@@ -14,13 +14,9 @@
  *= require_self
  */
 
- .nav {
-     float: right;
-     display: flex;
-     justify-content: flex-end;
-     background-color: rgb(241, 15, 15);
+ .home{
+    background-image: url("");
  }
-
 
  .greeting {
      float: right;
@@ -44,11 +40,6 @@
      text-decoration: none;
  }
 
- .home {
-    font: bold;
-     color: white;
-     text-decoration: none;
- }
 
  .greeting > * {
      background-color: rgb(241, 15, 15);
@@ -60,9 +51,25 @@
     font-size: 30px;
  }
 
- .btn:hover {
+ .modal-btn {
+     background-color: blue;
+     color: white;
      cursor: pointer;
+     position: center;
+     border: none;
+     padding-left: 75px;
+     padding-right: 75px;
+     padding-top: 6px;
+     padding-bottom: 6px;
+     border-radius: 3px;
+     font: 10px;
+     font-weight: bold;
  }
+
+ .modal-btn:hover {
+     background-color:darkblue
+ }
+
 
 
 .modal-background{
@@ -73,23 +80,106 @@
     left: 0;
     background: rgba(0, 0, 0, 0.7);
     z-index: 10;
-    
 }
 
 .modal-child{
     position: absolute; 
     top: 50%;
     left: 50%; 
-    height: 50px;
     transform: translate(-50%, -50%);
 }
 
-.signin-form{
+.modal-form{
     background-color: white;
+    text-align: center;
+    width: 400px;
+    height: 400px;
 }
 .signup-form{
     background-color: white;
 }
 
+
+.signin-signup{
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    height: 40px;
+}
+.title{
+    color: white;
+    text-decoration: none;
+}
+
+.modal-header{
+    background-color: red;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.greeting-btn{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 17px;
+    border: none;
+    display: flex;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.modal-field{
+    background-color: white;
+}
+
+.header-link{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    transform: translateX(5px);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.right-nav{
+    display: flex;
+    align-items: center;
+}
+
+.left-nav{
+    display: flex;
+    align-items: center;
+}
+
+.form-content{
+    padding-top: 25px;
+}
+
+.greeting-title {
+    font-family: Arial, Helvetica, sans-serif;
+    font: 17px;
+}
+
+.modal-field{
+    width: 250px;
+    border-radius: 3px;
+}
+
+.modal-field-name{
+    width: 100px;
+    border-radius: 3px;
+    background-color: white
+}
+
+.field-name-container{
+    display: flex;
+    padding-left: 80px;
+    width: 175px;
+}
 
 

@@ -1,13 +1,14 @@
-// import React from 'react'
-// import { Link } from "react-router-dom"
+import React from 'react'
+import GreetingContainer from '../greeting/greeting_container'
 
-// const Home = () => (
-//     <div className="home" >
-//         <Link to="/" className="header-logo">Sprouting Potatoes</Link>
-//         <div>
-//             <img className="Logo" src="https://www.rottentomatoes.com/assets/pizza-pie/head-assets/images/RT_TwitterCard_2018.jpg" />
-//         </div>
-//     </div>
-// )
 
-// export default Home
+const Home = () => (
+    <div className="home">
+        <GreetingContainer/>
+        <h1>I am here</h1>
+        <div className="potato-img-frame">
+        </div>
+    </div>
+)
+
+export default Home

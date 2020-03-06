@@ -1,19 +1,33 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 
     const Greeting = ({currentUser, signout, openModal}) => {
         const session_links = () => (
-            <nav className="signin-signup">
-                <button onClick={ () => openModal('signin')}>Sign In</button>                 
-                    &nbsp;&nbsp; &nbsp;&nbsp;
-                <button onClick={ () => openModal('signup')}>Sign Up</button>
-            </nav>
+            <div>
+                <nav className="signin-signup">
+                    <div className="left-nav">
+                        <Link className="header-link" to="/"> Sprouting Potatoes! </Link>
+                    </div>
+                    <div className="right-nav"> 
+                        <button className="greeting-btn" onClick={ () => openModal('signin')}>Sign In!</button>                 
+                        <button className="greeting-btn" onClick={ () => openModal('signup')}>Sign Up!</button>
+                    </div>
+                </nav>
+            </div>
         ); 
         const personalGreeting = () => (
-            <hgroup className="greeting"> 
-                <h3>Hi! {currentUser.first_name}</h3> 
-                <button className="signout-button" onClick={signout}>Sign out</button>
-            </hgroup>
+            <div>
+                <nav className="signin-signup"> 
+                    <div className="left-nav">
+                        <Link className="header-link" to="/"> Sprouting Potatoes!</Link>
+                    </div>
+                    <div className="right-nav">
+                        <h4 className="greeting-title">Hi! {currentUser.first_name}</h4> 
+                        <button className="greeting-btn" onClick={signout}>Sign out!</button>
+                    </div>
+                </nav>
+            </div>
         )
 
         return currentUser ? personalGreeting() : session_links()

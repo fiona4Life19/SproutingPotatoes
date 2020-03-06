@@ -13,7 +13,7 @@ const mDTP = dispatch => ({
     signin: (user) => dispatch(signin(user)),
     demoUser: () => dispatch(signin({ email: "ASEbuzz@aol.com", password: "password"})),
     signupButton: ( 
-        <button onClick={ () => dispatch(openModal("signup"))} >Sign Up</button>
+        <button className="modal-btn" onClick={ () => dispatch(openModal("signup"))} >Sign Up!</button>
     ), 
     closeModal: () => dispatch(closeModal())
 })

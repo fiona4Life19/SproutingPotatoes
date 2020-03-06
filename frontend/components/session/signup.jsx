@@ -13,7 +13,6 @@ class Signup extends React.Component {
 
         this.handleDemoUser = this.handleDemoUser.bind(this)
         this.handlesubmit = this.handlesubmit.bind(this)
-        // this.openModal = this.openModal.bind(this)
     }
 
     handlesubmit(e) {
@@ -42,52 +41,68 @@ class Signup extends React.Component {
     render() {
         const error_messages = this.props.errors.map( (err) => <div>{err}</div>)
         return(
-            <div className="signup-form">
-                <h2>Sign up for Sprouting Potatoes!</h2>
+            <div className="modal-form">
+                <h2 className="modal-header">Sign up for Sprouting Potatoes!</h2>
                 <form>
                     <br/>
-                    Please Sign Up or {this.props.signinButton}
+                    Please Sign Up or 
                     <br/>
+                    {this.props.signinButton}
+                    <br/>
+                    <br/>
+                <div className="modal-content">
+                    <div className="field-name-container">
                     <label>First Name:
-                        <input type="text" 
+                        <br/>
+                        <input className="modal-field-name"
+                               type="text" 
                                value={this.state.first_name} 
                                onChange={this.update('first_name')}/>
                     </label>
-                    <br/>
+                    &nbsp;&nbsp;     
                     <label>Last Name:
-                        <input type="text" 
+                        <br/>
+                        <input 
+                               className="modal-field-name" 
+                               type="text" 
                                value={this.state.last_name} 
                                onChange={this.update("last_name")}/>
                     </label>
+                    </div>
                     <br/>
                     <label>Email:
-                        <input type="text" 
-                               value={this.state.email} 
-                               onChange={this.update("email")}/>
+                        <br />
+                        <input 
+                            className="modal-field"
+                            type="text" 
+                            value={this.state.email} 
+                            onChange={this.update("email")}/>
                     </label>
                     <br/>
                     <label>Password:
-                        <input type="password" 
-                               value={this.state.password} 
-                               onChange={this.update("password")}/>
+                        <br />
+                        <input 
+                            className="modal-field"
+                            type="password" 
+                            value={this.state.password} 
+                            onChange={this.update("password")}/>
                     </label>
                     <br/>
-
-                    <button className="btn" onClick={this.handlesubmit}>Sign up!
-                    </button>
+                    <br/>
+                    <button className="modal-btn" onClick={this.handlesubmit}
+                    >Sign Up!</button>
 
                     <div>
                         {error_messages}
                     </div>
-
-                    <button className="btn" 
-                    onClick={this.handleDemoUser}>Demo User</button> 
+                    <br/>
+                    <button className="modal-btn" onClick={this.handleDemoUser}
+                        >Demo User</button> 
+                    </div>
                 </form>
             </div>
         )
-
     }
-
 }
 
 export default Signup
