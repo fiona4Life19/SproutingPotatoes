@@ -23,7 +23,7 @@ import { Link } from "react-router-dom"
                         <Link className="header-link" to="/"> Sprouting Potatoes!</Link>
                     </div>
                     <div className="right-nav">
-                        <h4 className="greeting-title">Hi! {currentUser.first_name}</h4> 
+                        <h4 className="greeting-title">Hi {currentUser.first_name}!</h4> 
                         <button className="greeting-btn" onClick={signout}>Sign out!</button>
                     </div>
                 </nav>
