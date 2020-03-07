@@ -33,24 +33,23 @@ class Signin extends React.Component {
     render() {
         let errorMessages = this.props.errors.map(err => <div>{ err }</div>)
         return (
-            <div>
             <div className="modal-form"> 
-                    <h2 className="modal-header">Sign in to Sprouting Potatoes!</h2>
+                <div>
+                    <h2 className="modal-header">Sign in to Sprouting Potatoes!
+                        <i className="fas fa-times" onClick={this.props.closeModal}></i>
+                    </h2>
+                </div>
                 <div className="form-content">
-                        Please Sign In or  &nbsp;&nbsp;
-                    {this.props.signupButton}
-                        <br />
-                        <br />
                         <form >
-                            <label>Email:
+                            <label>Email Address
                             <br/>
                                 <input className="modal-field" type="text"
                                 value={this.state.first_name}
                                 onChange={this.update("email")} />
                             </label>
                             <br/>
-                            <br />
-                            <label>Password:
+                            <br/>
+                            <label>Password
                             <br/>
                                 <input className="modal-field" type="password"
                                     value={this.state.last_name}
@@ -70,7 +69,11 @@ class Signin extends React.Component {
                                 >Demo User</button>
                             </div>
                         </form>
-                    </div>
+                            <div className="signin-modal-footer">
+                                <h3 className="modal-footer-text">Don't have an account?</h3>
+                                &nbsp;&nbsp;
+                                {this.props.signupButton}
+                            </div>
                 </div>
             </div>
         )

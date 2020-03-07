@@ -11,6 +11,7 @@ const ImageSlide = ({imgUrls}) => {
 
     return(
         <div className="image-slide" styles={styles}></div>
+        <img src="./titanic" alt=""/>
     )   
 }
 

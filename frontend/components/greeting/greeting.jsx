@@ -18,6 +18,7 @@ import { Link } from "react-router-dom"
         ); 
         const personalGreeting = () => (
             <div>
+                {/* <img src="./potato.png" alt=""/> */}
                 <nav className="signin-signup"> 
                     <div className="left-nav">
                         <Link className="header-link" to="/"> Sprouting Potatoes!</Link>

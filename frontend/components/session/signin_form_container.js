@@ -13,9 +13,9 @@ const mDTP = dispatch => ({
     signin: (user) => dispatch(signin(user)),
     demoUser: () => dispatch(signin({ email: "ASEbuzz@aol.com", password: "password"})),
     signupButton: ( 
-        <button className="modal-btn" onClick={ () => dispatch(openModal("signup"))} >Sign Up!</button>
+        <button className="modal-footer-button" onClick={ () => dispatch(openModal("signup"))} >Sign Up Here</button>
     ), 
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
 })
 
 export default connect(mSTP, mDTP)(Signin)

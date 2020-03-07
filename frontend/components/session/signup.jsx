@@ -42,35 +42,30 @@ class Signup extends React.Component {
         const error_messages = this.props.errors.map( (err) => <div>{err}</div>)
         return(
             <div className="modal-form">
-                <h2 className="modal-header">Sign up for Sprouting Potatoes!</h2>
+                <h2 className="modal-header">Sign up for Sprouting Potatoes!
+                    <i className="fas fa-times" onClick={this.props.closeModal}></i>
+                </h2>
                 <form>
-                    <br/>
-                    Please Sign Up or 
-                    <br/>
-                    {this.props.signinButton}
-                    <br/>
-                    <br/>
                 <div className="modal-content">
                     <div className="field-name-container">
-                    <label>First Name:
+                        <label>First Name
                         <br/>
                         <input className="modal-field-name"
                                type="text" 
                                value={this.state.first_name} 
                                onChange={this.update('first_name')}/>
-                    </label>
-                    &nbsp;&nbsp;     
-                    <label>Last Name:
-                        <br/>
-                        <input 
+                        </label>
+                                    &nbsp;&nbsp;     
+                        <label>Last Name
+                            <br/>
+                            <input 
                                className="modal-field-name" 
                                type="text" 
                                value={this.state.last_name} 
                                onChange={this.update("last_name")}/>
-                    </label>
+                        </label>
                     </div>
-                    <br/>
-                    <label>Email:
+                    <label>Email
                         <br />
                         <input 
                             className="modal-field"
@@ -79,7 +74,7 @@ class Signup extends React.Component {
                             onChange={this.update("email")}/>
                     </label>
                     <br/>
-                    <label>Password:
+                    <label>Password
                         <br />
                         <input 
                             className="modal-field"
@@ -100,9 +95,16 @@ class Signup extends React.Component {
                         >Demo User</button> 
                     </div>
                 </form>
-            </div>
+
+
+                <div className="signup-modal-footer">
+                    <h5 className="modal-footer-text">Already have an account?</h5>
+                    &nbsp;&nbsp;
+                        {this.props.signinButton}
+                </div>
+            </div>      
         )
     }
 }
-
+        
 export default Signup
