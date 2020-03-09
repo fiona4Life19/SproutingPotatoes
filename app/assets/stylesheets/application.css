@@ -24,7 +24,7 @@
 
  .header-logo {
      font: bold;
-     background-color: rgb(241, 15, 15);
+     background-color:#fa320a;
      color: white;
      text-decoration: none;
      display: flex; 
@@ -39,23 +39,23 @@
 
 
  .greeting > * {
-     background-color: rgb(241, 15, 15);
+     background-color:#fa320a;
      color: white
  }
 
  .logout{
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
  }
 
  .modal-btn {
-     background-color: rgb(41, 41, 172);
+     background-color:  #3976dc;
      color: white;
      cursor: pointer;
      position: center;
      border: none;
-     padding-left: 75px;
-     padding-right: 75px;
+     padding-left: 125px;
+     padding-right: 125px;
      padding-top: 6px;
      padding-bottom: 6px;
      border-radius: 3px;
@@ -64,10 +64,8 @@
  }
 
  .modal-btn:hover {
-     background-color:darkblue
+     background-color:darkblue;
  }
-
-
 
 .modal-background{
     position: fixed; 
@@ -103,8 +101,13 @@
 .signin-signup{
     display: flex;
     justify-content: space-between;
-    background-color: red;
+    background-color: #fa320a;
     height: 40px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
 }
 
 .title{
@@ -113,7 +116,7 @@
 }
 
 .modal-header {
-    background-color: red;
+    background-color: #fa320a;
     color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -127,20 +130,16 @@
 }
 
 .greeting-btn{
-    background-color: red;
+    background-color: #fa320a;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    font-size: 17px;
+    font-size: 18px;
     border: none;
     display: flex;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.modal-field{
-    background-color: white;
-    width: 400px
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    transform: translateY(2px)
 }
 
 .header-link{
@@ -151,12 +150,13 @@
     display: flex;
     align-items: center;
     transform: translateX(5px);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
 .right-nav{
     display: flex;
     align-items: center;
+    transform: translateX(-20px);
 }
 
 .left-nav{
@@ -169,20 +169,21 @@
 }
 
 .greeting-title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
     font: 17px;
     color: white;
 }
 
 .modal-field{
-    width: 250px;
+    width: 350px;
     border-radius: 5px;
 }
 
 .modal-field-name{
-    width: 175px;
+    width: 168px;
     background-color: white;
     border-radius: 5px;
+    transform: translateX(4px)
 }
 
 .field-name-container{
@@ -195,6 +196,11 @@
 .fa-times {
     cursor: pointer;
     transform: translateY(2px);
+}
+
+.fa-user{ 
+    color: white;
+    font-size: 20px;
 }
 
 .signup-modal-footer {
@@ -220,7 +226,7 @@
 }
 
 .modal-footer-text{
-    font-family: Arial, Helvetica, sans-serif;  
+    font-family: 'Franklin Gothic Medium', Arial, sans-serif; 
     font-size: 14px; 
 }
 
@@ -235,10 +241,183 @@
      border: none;
      font: 20px;
      font-weight: bold;
-     font-family: Arial, Helvetica, sans-serif;
-     color: rgb(41, 41, 172);
+     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+     color: #3976dc;
      transform: translateY(1px);
  }
+
+ .seperator{ 
+    color:white;
+    font-weight: bold;
+    font-size: 17px;
+ }
+
+ .search-box {
+    display: flex;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+    transform: translateX(20px)
+ }
+
+ .fa-search{
+    color: black;
+    justify-content: center;
+    padding-top: 10px;
+    height: 30px; 
+    width: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+ }
+
+ .search-btn{
+     color: white;
+     float: right; 
+     width: 40px; 
+     height: 40px;
+     border-radius: 50%;
+     align-items: center;
+ }
+ 
+ .search-text{
+     border: none;
+     background: none;
+     outline: none; 
+     float: left; 
+     padding: 0;
+     color: white;
+     font-size: 16px;
+     width: 240px; 
+ }
+
+ .search-bar{
+     width: 350px;
+     border-radius: 6px;
+     height: 30px;
+     position: relative;
+}
+
+.actor-search{
+    text-decoration: none;
+    color: white;
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 50px;
+    /* transform: translateX(px); */
+}
+
+.movie-search{
+    text-decoration: none;
+    color: white;
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-size: 20px;
+    font-weight: bold;
+    padding-right: 50px;
+    /* transform: translateX(px); */
+}
+
+.movies-actors-search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    position: relative;
+}
+
+.user{
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.right-nav-signedin{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.dropdown-trigger {
+    position: relative;
+}
+
+.dropdown-btn{
+    background-color:  #fa320a;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-weight: bold;
+}
+
+
+.dropdown-items {
+    position: absolute;
+    display: none;
+    width: 50px;
+}
+
+.dropdown-trigger:hover > .dropdown-items{
+    display: block;
+    width: 250px;
+    right: 5px;
+}
+
+.image-slide{
+    height: 500px; 
+    width: 500px;
+}
+
+.dropdown-btn > li:hover {
+    display: block;
+    background-color: white;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+
+}
+
+ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+li:hover {
+    display: block;
+    color: #fa320a;
+    font-weight: bold;
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-size: 17px;
+    cursor: pointer;
+}
+li {
+    background-color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 10px; 
+    padding: 10px;
+    border: black;
+}
+
+.signout-btn{
+    font-size: 17px;
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    border: none;
+    font-weight: bold;
+    background-color: white;
+    cursor: pointer;
+    transform: translateX(-7px)
+}
+
+.signout-btn:hover{
+    color: #fa320a;
+}
+
 
 
 

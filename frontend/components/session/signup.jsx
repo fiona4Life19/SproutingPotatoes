@@ -12,10 +12,10 @@ class Signup extends React.Component {
         }
 
         this.handleDemoUser = this.handleDemoUser.bind(this)
-        this.handlesubmit = this.handlesubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    handlesubmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
         this.props.signup(this.state)
             .then(this.props.closeModal)
@@ -84,7 +84,7 @@ class Signup extends React.Component {
                     </label>
                     <br/>
                     <br/>
-                    <button className="modal-btn" onClick={this.handlesubmit}
+                    <button className="modal-btn" onClick={this.handleSubmit}
                     >Sign Up!</button>
 
                     <div>
@@ -100,7 +100,7 @@ class Signup extends React.Component {
                 <div className="signup-modal-footer">
                     <h5 className="modal-footer-text">Already have an account?</h5>
                     &nbsp;&nbsp;
-                        {this.props.signinButton}
+                    {this.props.signinButton}
                 </div>
             </div>      
         )

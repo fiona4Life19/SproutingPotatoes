@@ -1,11 +1,13 @@
 import React from 'react'
 import GreetingContainer from '../greeting/greeting_container'
+import Carousuel from "../carousuel/carousuel"
+import Slider from "../slider/slider"
 
 
 const Home = () => (
     <div className="home">
         <GreetingContainer/>
-        <h1>I am here</h1>
+        <Carousuel/>
         <div className="potato-img-frame">
         </div>
     </div>

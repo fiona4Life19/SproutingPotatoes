@@ -3,5 +3,37 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-    background: black;
+    // background-image: image_url("starship-troopers.jpg");
+    margin-top: 75px;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-bottom: 75px;
+}
+
+
+$theme-grey: grey;
+
+.image-slide{
+    transition: background-image .3s ease-in-out;
+    width: 20%;
+}
+
+.carousuel{
+    width: 50px;
+}
+
+.slide-arrow{
+    color: $theme-grey;
+    cursor: pointer;
+    font-size: 2rem;
+    position: fixed;
+    top: 50%;
+}
+
+.slide-arrow.right{ 
+    right: 1rem
+}
+
+.slide-arrow.left{
+    left: 1rem;
 }

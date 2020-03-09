@@ -6,7 +6,7 @@ class ReviewForm extends React.Component{
         super(props)
 
         this.state = {
-            rating: 5,
+            rating: 10,
             body: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -41,7 +41,7 @@ class ReviewForm extends React.Component{
                     />
                 <br/>
 
-                <label>Comment</label>
+                <label>Review</label>
                 <br/>
 
                 <textarea               

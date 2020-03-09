@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
             signin(@user)
             render "api/users/show"
         else  
-            render json: @user.errors.full_messages, status: 418
+            render json: ["Invalid email/ password must be at least 6 characters"], status: 418
         end  
     end  
 

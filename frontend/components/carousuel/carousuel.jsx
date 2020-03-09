@@ -2,59 +2,67 @@ import React from "react"
 import ImageSlide from "./image_slide"
 import Arrow from "./arrow"
 
-const imgUrls = ["https://i.insider.com/5ba91dd19c888d77108b4574?width=1100&format=jpeg&auto=webp",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSVnto_m7Zs0OuYp1XTLcgQyEUdkn414psV0PajzpYLrnMqFcUm",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRHyG9hu2KHVgDm23uOCPJIY8sc73mRVzsP3qI9t1DukQI5r_vs",
-    "https://www.studiomoviegrill.com/content/6f328dd0-b082-44a2-968b-d78381340a14.jpg"]
+const imgUrls = ["https://www.vintagemovieposters.co.uk/wp-content/uploads/2016/03/IMG_1143.jpg", "https://i.etsystatic.com/13513569/r/il/879723/1116897704/il_1588xN.1116897704_4zna.jpg", "https://images-na.ssl-images-amazon.com/images/I/81Zqwo1ovGL._SL1500_.jpg"]
 
 class Carousuel extends React.Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            currentImageIndex: 0
+            activeIndex: 0
         }
 
         this.previousSlide = this.previousSlide.bind(this);
         this.nextSlide = this.nextSlide.bind(this);
     }
 
-    previousSlide() {
-        const lastImgIdx = imgUrls.length-1;
-        const { currentImageIndex } = this.state;
-        const shouldResetIndex = currentImageIndex === 0; 
-        const index = shouldResetIndex ? lastImgIdx : currentImageIndex - 1;
+    previousSlide(e) {
+        e.preventDefault()
+        let index = this.state.activeIndex;
+        let slidesLength = imgUrls.length
+
+        if (index < 1) {
+            index = slidesLength
+        }
+
+        index -=1;
 
         this.setState({
-            currentImageIndex: index
+            activeIndex: index
         })
     }
 
-    nextSlide() {
-        const lastImgIndex = imgUrls.length-1;
-        const {currentImageIndex} = this.state;
-        const shouldResetIndex = currentImageIndex === lastImgIndex; 
-        const index = shouldResetIndex ? 0 : currentImageIndex + 1;
+    nextSlide(e) {
+        e.preventDefault()
+        let index = this.state.activeIndex;
+        let slidesLength = imgUrls.length - 1; 
+
+        if (index === slidesLength) {
+            index = -1;
+        }
+
+        index += 1;
 
         this.setState({
-            currentImageIndex: index
+            activeIndex: index
         })
     }
+
 
     render() {
         return (
             <div className="carousuel">
                 <Arrow 
                     direction="left"
-                    clickFunction={this.previousSlide}
+                    clickFunction={ e => this.previousSlide(e)}
                     icon="&#9664;"
                 />
 
-                <ImageSlide imgUrls={imgUrls[this.state.currentImageIndex]} />
+                <ImageSlide url={imgUrls[this.state.activeIndex]} />
 
                 <Arrow 
                     direction="right"
-                    clickFunction={this.nextSlide} 
+                    clickFunction={e => this.nextSlide(e)} 
                     icon="&#9654;"
                 />
             </div>

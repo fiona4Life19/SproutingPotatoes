@@ -8,3 +8,9 @@
 User.destroy_all
 user1 = User.create!({email: "ASEbuzz@aol.com", password: "password", first_name: "Aaron", last_name: "Baum"})
 user2 = User.create!({email: "jpjohnston@ucdavis.edu", password: "password", first_name: "Joseph", last_name: "Johnston"})
+
+
+#movies
+
+movie1 = Movie.create!(title: "Starship Troopers", synopsis: "An intergallactic battle between human and bugs", runtime: "125 min", 
+genre: "Sci-Fi", release_date: DateTime.strptime("11/7/1997", "%m/%d/%Y"), rating: 5.0, on_dvd: true)
