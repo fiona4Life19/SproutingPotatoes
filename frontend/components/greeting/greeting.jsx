@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import dropdown from "../dropdown/dropdown"
-import Dropdown from "../dropdown/dropdown";
 
 
     const Greeting = ({currentUser, signout, openModal}) => {

@@ -1,7 +1,6 @@
 import React from 'react'
 import GreetingContainer from '../greeting/greeting_container'
 import Carousuel from "../carousuel/carousuel"
-import Slider from "../slider/slider"
 
 
 const Home = () => (
