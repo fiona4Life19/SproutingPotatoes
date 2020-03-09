@@ -9,7 +9,7 @@ const sessionErrorsReducer = (oldState = [], action) => {
         case RECEIVE_CURRENT_USER: 
             return [];
         case CLEAR_ERRORS:
-            Object.assign({}, oldState)
+            return [];
         default: 
             return oldState
     }
