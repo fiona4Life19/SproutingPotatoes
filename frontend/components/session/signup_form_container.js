@@ -6,6 +6,7 @@ import { openModal, closeModal } from "../../actions/modal_actions"
 
 
 
+
 const mSTP = ({errors}) => ({
     errors: errors.session
 })
@@ -14,7 +15,10 @@ const mDTP = (dispatch) => ({
     signup: (user) => dispatch(signup(user)),
     signin: (user) => dispatch(signin(user)),
     signinButton: (
-        <button className="modal-footer-button" onClick={ () => dispatch(openModal('signin'))}>Sign In Here</button>
+        <button className="modal-footer-button" onClick={ () =>{ 
+            dispatch(openModal('signin'))}
+            dispatch()
+         }>Sign In Here</button>
     ),
     closeModal: () => dispatch(closeModal())
 })
