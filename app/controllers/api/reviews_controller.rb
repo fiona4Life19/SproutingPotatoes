@@ -13,7 +13,7 @@ class Api::ReviewsController < ApplicationController
         if @review.save 
             render :show 
         else   
-            render json: @review, status: :unprocessable entity
+            render json: @review, status: 402
         end  
     end  
 
