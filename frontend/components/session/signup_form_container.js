@@ -17,7 +17,6 @@ const mDTP = (dispatch) => ({
     signinButton: (
         <button className="modal-footer-button" onClick={ () =>{ 
             dispatch(openModal('signin'))}
-            dispatch()
          }>Sign In Here</button>
     ),
     closeModal: () => dispatch(closeModal())
