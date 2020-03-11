@@ -12,11 +12,16 @@ class Signin extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         this.props.signin(this.state)
             .then(this.props.closeModal)
     }
+
 
     handleDemoUser(e) {
         e.preventDefault()
@@ -31,11 +36,11 @@ class Signin extends React.Component {
     }
 
     render() {
-        let errorMessages = this.props.errors.map(err => <div>{ err }</div>)
+        let errorMessages = this.props.errors.map(err => <div className="errors" >{ err }</div>)
         return (
             <div className="modal-form"> 
                 <div>
-                    <h2 className="modal-header">Sign in to Sprouting Potatoes!
+                    <h2 className="modal-header">Sign in 
                         <i className="fas fa-times" onClick={this.props.closeModal}></i>
                     </h2>
                 </div>
@@ -57,7 +62,7 @@ class Signin extends React.Component {
                             </label>
                             <br/>
                             <br/>
-                                <button className="modal-btn"  onClick={this.handleSubmit}>Sign In!
+                                <button className="modal-btn"  onClick={this.handleSubmit}>Sign In
                                 </button>
                             <br/>
                             <div>
@@ -72,7 +77,7 @@ class Signin extends React.Component {
                             <div className="signin-modal-footer">
                                 <h3 className="modal-footer-text">Don't have an account?</h3>
                                 &nbsp;&nbsp;
-                                {this.props.signupButton}
+                                {this.props.signUpButton}
                             </div>
                 </div>
             </div>

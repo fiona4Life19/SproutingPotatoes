@@ -4,14 +4,14 @@ import SignUpFormContainer from "./session/signup_form_container"
 import SignInFormContainer from "./session/signin_form_container"
 import { AuthRoute } from "../util/route_util"
 import Modal from './modal/modal'
-import Home from "./home/home"
+import HomeContainer from "./home/home_container"
 
 
 const App = () => {
     return (
     <div>
         <Modal /> 
-        <Route path="/" component={Home} />
+        <Route path="/" component={HomeContainer} />
         <AuthRoute path="/signup" component={SignUpFormContainer}/>
         <AuthRoute path= "/signin" component={SignInFormContainer} />
     </div>

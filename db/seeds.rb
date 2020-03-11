@@ -72,6 +72,13 @@ movie15 = Movie.create!({title: "The Town", synopsis: "A longtime thief, plannin
 genre: "Action", release_date: DateTime.strptime("11/7/1997", "%m/%d/%Y"), score: 3.9, in_theaters: true, rate: "R"})
 
 
+#Genre Table 
+genre1 = Genre.Create({name: "Drama"})
+
+#Genre Joins
+
+genreJoins1 = GenreJoins.creat!({movie_id: movie1.id, genre_id: genre1.id})
+
 # actors
 
 Actor.destroy_all

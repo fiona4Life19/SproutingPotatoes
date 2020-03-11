@@ -2,7 +2,7 @@ import React from "react"
 import ImageSlide from "./image_slide"
 import Arrow from "./arrow"
 
-const imgUrls = ["https://www.vintagemovieposters.co.uk/wp-content/uploads/2016/03/IMG_1143.jpg", "https://i.etsystatic.com/13513569/r/il/879723/1116897704/il_1588xN.1116897704_4zna.jpg", "https://images-na.ssl-images-amazon.com/images/I/81Zqwo1ovGL._SL1500_.jpg"]
+const imgUrls = ["https://www.youtube.com/embed/?v=SfEpqmdXhiU", "https://www.youtube.com/watch?v=lc0UehYemQA"]
 
 class Carousuel extends React.Component {
     constructor(props) {

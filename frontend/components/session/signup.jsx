@@ -15,6 +15,10 @@ class Signup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
+
     handleSubmit(e) {
         e.preventDefault()
         this.props.signup(this.state)
@@ -39,10 +43,10 @@ class Signup extends React.Component {
     }
 
     render() {
-        const error_messages = this.props.errors.map( (err) => <div>{err}</div>)
+        const error_messages = this.props.errors.map( (err) => <div className="errors">{err}</div>)
         return(
             <div className="modal-form">
-                <h2 className="modal-header">Sign up for Sprouting Potatoes!
+                <h2 className="modal-header">Sign up 
                     <i className="fas fa-times" onClick={this.props.closeModal}></i>
                 </h2>
                 <form>
@@ -85,7 +89,7 @@ class Signup extends React.Component {
                     <br/>
                     <br/>
                     <button className="modal-btn" onClick={this.handleSubmit}
-                    >Sign Up!</button>
+                    >Sign Up</button>
 
                     <div>
                         {error_messages}
@@ -101,6 +105,7 @@ class Signup extends React.Component {
                     <h5 className="modal-footer-text">Already have an account?</h5>
                     &nbsp;&nbsp;
                     {this.props.signinButton}
+                    {this.props.clearErrors}
                 </div>
             </div>      
         )

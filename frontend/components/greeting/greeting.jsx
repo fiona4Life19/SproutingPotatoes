@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
             <div>
                 <nav className="signin-signup">
                     <div className="left-nav">
-                        <Link className="header-link" to="/"> Sprouting Potatoes! </Link>
+                        <Link className="header-link" to="/"> Sprouting Potatoes</Link>
                     </div>
 
                     <div className="search-box">
@@ -16,9 +16,8 @@ import { Link } from "react-router-dom"
                     </div>
 
                     <div className="right-nav"> 
-                        <button className="greeting-btn" onClick={ () => openModal('signin')}>Sign In!</button>  
-                        <p className="seperator">|</p>               
-                        <button className="greeting-btn" onClick={ () => openModal('signup')}>Sign Up!</button>
+                        <button className="greeting-btn" onClick={ () => openModal('signin')}>Sign In</button>                
+                        <button className="greeting-btn" onClick={ () => openModal('signup')}>Sign Up</button>
                     </div>
                 </nav>
             </div>
@@ -28,13 +27,13 @@ import { Link } from "react-router-dom"
                 {/* <img src="./potato.png" alt=""/> */}
                 <nav className="signin-signup"> 
                     <div className="left-nav">
-                        <Link className="header-link" to="/"> Sprouting Potatoes!</Link>
+                        <Link className="header-link" to="/"> Sprouting Potatoes </Link>
                     </div>
 
-                    <div className="search-box">
+                    {/* <div className="search-box">
                         <input className="search-bar" type="text" name="" placeholder="Search movie or actor" />
                         <i className="fas fa-search"></i>
-                    </div>
+                    </div> */}
 
                     <div className="right-nav-signedin">
                             <i className="fas fa-user"></i>
@@ -44,12 +43,9 @@ import { Link } from "react-router-dom"
                             <button className="dropdown-btn" >{currentUser.first_name}  ▾ </button>
                                    
                                     <ul className="dropdown-items">
-                                        <li>profile</li>
-                                        <li>reviews</li>
                                         <li>
                                         <button className="signout-btn" onClick={signout}>signout</button>
                                         </li>
-                                        
                                     </ul>
                                 </div>
                     </div>

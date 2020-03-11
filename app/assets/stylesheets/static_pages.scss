@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-    // background-image: image_url("starship-troopers.jpg");
+    background-color: rgb(78, 74, 74);
     margin-top: 75px;
     margin-left: 75px;
     margin-right: 75px;
@@ -36,4 +36,16 @@ $theme-grey: grey;
 
 .slide-arrow.left{
     left: 1rem;
+}
+
+@media screen and (min-width: 750px) {
+    .greeting-btn {
+      display: none
+    }
+}
+
+@media screen and (min-width: 705px) {
+    .search-box {
+        display: none
+    }
 }
