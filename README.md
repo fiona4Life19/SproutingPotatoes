@@ -1,5 +1,31 @@
 # README
 
+# Sprouting Potatoes 
+
+[Sprouting Potatoes Live](https://sproutingpotatoes.herokuapp.com/#/)
+
+Sprouting Potatoes live is a full stack web application inspired by Rotten Tomatoes. Sprouting Potatoes uses PostgreSQL 12 database for storage. Sprouting Potatoes incorperates the framework Ruby on Rails in the backend and React and Redux on the front. 
+
+
+# Feature and Implementation 
+
+## Index of Movies 
+
+Sprouting Potatoes features an index of all the movies in the database dispayed on clickable card elements that redirect a user to the show page for that specified movie. 
+
+![Index](/app/assets/images/index.png) 
+
+
+
+
+## Show Page 
+
+The Sprouting potatoes show page three sections the first being details about a movie. The second and third sections feature a list of actors for that movie, and a collection of reviews. 
+
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
