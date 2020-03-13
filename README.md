@@ -31,6 +31,8 @@ The Sprouting Potatoes home page has a carousuel that allows a user to scroll th
 
 # Challanges 
 
+## Carousuel
+
 One of my main challenges while programming Sprouting Potatoes was getting my Carousel to increment slides. The solution to my problem was to refactor my code and add a variable to increment my index. 
 
 ```Javascript
@@ -50,6 +52,32 @@ previousSlide(e) {
         })
     }
 ```
+
+## Modal 
+
+A second challange I faced was trying to make my signin/signout modal work on both my home and show page. The solution to this was to add a header tag in my App.jsx to render the modal and greeting container on every page.
+
+
+```Javascipt
+const App = () => {
+    return (
+    <div>
+        <header>
+           < Modal/>
+           < GreetingContainer/>
+        </header>
+
+        <Switch>
+            <AuthRoute path="/signup" component={SignUpFormContainer} />
+            <AuthRoute path= "/signin" component={SignInFormContainer} />
+            <Route path="/movies/:movieId" component={MovieShowContainer} />
+            <Route path="/" component={HomeContainer} />
+        </Switch>
+    </div>
+    )
+}
+```
+
 
 
 
