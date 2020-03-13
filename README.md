@@ -18,9 +18,16 @@ Sprouting Potatoes features an index of all the movies in the database dispayed 
 
 ## Show Page 
 
-The Sprouting potatoes show page three sections the first being details about a movie. The second and third sections feature a list of actors for that movie, and a collection of reviews. 
+The Sprouting Potatoes show page three sections the first being details about a movie. The second and third sections feature a list of actors for that movie, and a collection of reviews. 
 
 ![Show](/app/assets/images/show.png) 
+
+## Carousuel 
+
+The Sprouting Potatoes home page has a carousuel that allows a user to scroll through movie trailers.
+
+![trailer](/app/assets/images/trailer.png) 
+
 
 
 
