@@ -13,7 +13,7 @@ Sprouting Potatoes live is a full stack web application inspired by Rotten Tomat
 
 Sprouting Potatoes features an index of all the movies in the database dispayed on clickable card elements that redirect a user to the show page for that specified movie. 
 
-![Index](/assets/images/index.png) 
+![Index](/app/assets/images/index.png) 
 
 
 
