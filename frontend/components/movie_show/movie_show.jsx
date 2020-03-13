@@ -1,8 +1,9 @@
 import React from "react";
-import Greeting from "../greeting/greeting"
-import Modal from "../modal/modal"
 import MovieDetail from "./movie_detail";
-
+import {Link} from "react-router-dom"
+import {ProtectedRoute} from "../../util/route_util"
+import {ReviewLink} from "../../util/link_util"
+import ReviewFormContainer from "../reviews/review_form_container"
 
 class MovieShow extends React.Component {
     constructor(props) {
@@ -20,9 +21,20 @@ class MovieShow extends React.Component {
             return null
         }
         return(
-            <div className="single-movie-show"> 
+        <div className="single-movie-show"> 
                 <MovieDetail movie={movie} actors={actors} reviews={reviews} authors={authors}/>
+            <div className="right-half-show">
+                <ReviewLink 
+                    component={ReviewFormContainer}
+                    to={`/benches/${movieId}/review`}
+                    label="Write a Review"
+                />
+                <ProtectedRoute 
+                    path="/benches/:movieId/review"
+                    component={ReviewFormContainer}
+                />
             </div>
+        </div>
         )
     }
 }

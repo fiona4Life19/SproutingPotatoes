@@ -1,15 +1,16 @@
 import React from "react";
-import { withRouter } from "react-router_dom";
+import { withRouter } from "react-router-dom";
 
 class ReviewForm extends React.Component{
     constructor(props) {
         super(props)
 
         this.state = {
-            rating: 5,
+            score: 5,
             body: ''
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.navigateToMovieShow = this.navigateToMovieShow.bind(this);
     }
 
     navigateToMovieShow() {
@@ -20,8 +21,9 @@ class ReviewForm extends React.Component{
     handleSumbit(e) {
         e.preventDefault() 
         const movieId = parseInt(this.props.match.params.movieId)
-        const user = Object.assign({}, this.state, {movieId: movieId})
-        this.props.processFrom(user)
+        const review = Object.assign({}, this.state, {movie_Id: movieId })
+        this.props.createReview(review)
+        this.navigateToMovieShow
     }
 
     update(field) {
@@ -33,10 +35,10 @@ class ReviewForm extends React.Component{
         return(
             <div class="movie-review-form">
                 <form onSubmit={this.handleSubmit}>
-                    <label>Rating:</label>
+                    <label>Score:</label>
                     <br/>
-                    <input type="number" value={this.state.rating}
-                    onChange={this.update('rating')}
+                    <input type="number" value={this.state.score}
+                    onChange={this.update('score')}
                     />
                 <br/>
 
@@ -50,7 +52,7 @@ class ReviewForm extends React.Component{
                     onChange={this.update('body')}
                 />
 
-                <button onClick={this.navigateToMovieShow}></button>
+                <button onClick={this.navigateToMovieShow}>Cancel</button>
                 </form>
             </div>
 

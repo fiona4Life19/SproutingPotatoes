@@ -17,6 +17,7 @@ import { Link } from "react-router-dom"
                 </nav>
             </div>
         ); 
+        
         const personalGreeting = () => (
             <div>
                 {/* <img src="./potato.png" alt=""/> */}

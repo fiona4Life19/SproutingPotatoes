@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import  { createReview } from "../actions/review_actions.js";
-import ReviewForm from "./review/form";
+import  { createReview } from "../../actions/movie_actions";
+import ReviewForm from "./review_form";
 
 const mDTP = dispatch => ({
     createReview: review => dispatch(createReview(review))
 })
 
-export default connect(null, mDTP)(reviewForm)
+export default connect(null, mDTP)(ReviewForm)

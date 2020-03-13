@@ -1,4 +1,14 @@
 import React from "react"
+import ReviewListItem from "../reviews/review_list_item"
+
+const reviewList = (review) => (
+    reviews.map(review => (
+        <ReviewListItem
+            review={review}
+            key={review.id}
+        />
+    ))
+)
 
 
 const MovieDetail = ({movie, reviews, actors, authors}) => {
