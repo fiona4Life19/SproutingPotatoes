@@ -1,5 +1,6 @@
 
-import { RECEIVE_CURRENT_USER } from '../actions/sessions_actions';
+import { RECEIVE_CURRENT_USER} from '../actions/sessions_actions';
+import {RECEIVE_MOVIE} from "../actions/movie_actions"
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state) ;
@@ -8,6 +9,8 @@ const usersReducer = (state = {}, action) => {
                 let nextState = {}
                 nextState = Object.assign({}, state, { [action.currentUser.id]: action.currentUser })
                 return nextState
+            case RECEIVE_MOVIE:
+                return action.payload.users
             default: 
                 return state;
         }

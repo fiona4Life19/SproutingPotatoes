@@ -6,7 +6,7 @@ class ReviewForm extends React.Component{
         super(props)
 
         this.state = {
-            rating: 10,
+            rating: 5,
             body: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -20,9 +20,8 @@ class ReviewForm extends React.Component{
     handleSumbit(e) {
         e.preventDefault() 
         const movieId = parseInt(this.props.match.params.movieId)
-        const review = Object.assign({}, this.state, {movieId: movieId})
-        this.props.createReview(reviews)
-        this.navigateToMovieShow()
+        const user = Object.assign({}, this.state, {movieId: movieId})
+        this.props.processFrom(user)
     }
 
     update(field) {

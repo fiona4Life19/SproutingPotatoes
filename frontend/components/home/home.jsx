@@ -1,5 +1,5 @@
 import React from 'react'
-import GreetingContainer from '../greeting/greeting_container'
+import Greeting from '../greeting/greeting_container'
 import Carousuel from "../carousuel/carousuel"
 // import CardUI from "../cards/cardui"
 // import MovieBrowserContainer from '../movieBrowser/movie_browser_container'
@@ -20,10 +20,9 @@ class Home extends React.Component {
         const {movies} = this.props
         return(
             <div className="home">
-                <GreetingContainer/>
                 <Carousuel/>
                 <MovieIndex
-                   movies={movies}
+                movies={movies}
                 />
             </div>
         )

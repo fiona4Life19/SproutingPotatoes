@@ -72,14 +72,7 @@ movie15 = Movie.create!({title: "The Town", synopsis: "A longtime thief, plannin
 genre: "Action", release_date: DateTime.strptime("11/7/1997", "%m/%d/%Y"), score: 3.9, in_theaters: true, rate: "R"})
 
 
-#Genre Table 
-genre1 = Genre.Create({name: "Drama"})
 
-#Genre Joins
-
-genreJoins1 = GenreJoins.creat!({movie_id: movie1.id, genre_id: genre1.id})
-
-# actors
 
 Actor.destroy_all
 
@@ -128,8 +121,8 @@ review5 = Review.create!({author_id: user5.id, movie_id: movie5.id, body: "It's 
 review6 = Review.create!({author_id: user6.id, movie_id: movie6.id, body: "The film addresses its grim subject in a cool, matter-of-fact way.", score: 4.1})
 review7 = Review.create!({author_id: user7.id, movie_id: movie7.id, body: "This is one of the most beautiful films I have ever seen.", score: 4.9})
 review8 = Review.create!({author_id: user8.id, movie_id: movie8.id, body: "So rousingly, so emotionally, and so incalculably gratifying.", score: 4.8})
-review9 = Review.create!({author_id: user9.id, movie_id: movie9.id, body: "Fun, charming, but slight - and way too long and flabby in the girth for such slightness.", score: 4.2})
-review10 = Review.create!({author_id: user10.id, movie_id: movie10.id, body: "Seeing it a second time has made me love it even more, not always the case.", score: 4.5})
+review9 = Review.create!({author_id: user10.id, movie_id: movie9.id, body: "Fun, charming, but slight - and way too long and flabby in the girth for such slightness.", score: 4.2})
+review10 = Review.create!({author_id: user9.id, movie_id: movie10.id, body: "Seeing it a second time has made me love it even more, not always the case.", score: 4.5})
 review11 = Review.create!({author_id: user1.id, movie_id: movie11.id, body: "The movie is nonsense, but it does achieve a brazenly chic high style -- black-on-black, airborne, spasmodic.", score: 4.1})
 review12 = Review.create!({author_id: user2.id, movie_id: movie12.id, body: "Two years after Jennifer Lawrence appeared in David O. Russell's American Hustle, she gets to show some.", score: 3.8})
 review13 = Review.create!({author_id: user3.id, movie_id: movie13.id, body: "Extremely slick yet consistently entertaining...", score: 3.7})
@@ -138,14 +131,14 @@ review15 = Review.create!({author_id: user5.id, movie_id: movie15.id, body: "A t
 review16 = Review.create!({author_id: user6.id, movie_id: movie1.id, body: "Iron Man 3 is action-packed, funny and entertaining.", score: 3.4})
 review17 = Review.create!({author_id: user7.id, movie_id: movie2.id, body: "A mind-bending thriller that is a complete original, cementing Nolan's status as one of this generation's brightest filmmakers.", score: 3.2})
 review18 = Review.create!({author_id: user8.id, movie_id: movie3.id, body: "Christopher Nolan is much, much smarter than your average filmmaker.", score: 3.1})
-review19 = Review.create!({author_id: user9.id, movie_id: movie4.id, body: "One of the stronger comic book films to emerge from Marvel.", score: 3.0})
-review20 = Review.create!({author_id: user10.id, movie_id: movie5.id, body: "A great film and the capstone of Cameron's directoral career, although I like almost everything else he did better.", score: 2.9})
+review19 = Review.create!({author_id: user10.id, movie_id: movie4.id, body: "One of the stronger comic book films to emerge from Marvel.", score: 3.0})
+review20 = Review.create!({author_id: user9.id, movie_id: movie5.id, body: "A great film and the capstone of Cameron's directoral career, although I like almost everything else he did better.", score: 2.9})
 review21 = Review.create!({author_id: user1.id, movie_id: movie6.id, body: "A cure for boredom.", score: 3.8})
 review22 = Review.create!({author_id: user2.id, movie_id: movie7.id, body: "Interstellar may be a preposterous epic, but it is an epic nonetheless.", score: 3.7})
 review23 = Review.create!({author_id: user3.id, movie_id: movie8.id, body: "The Dark Knight Rises caps off the trilogy with a high but bittersweet note.", score: 3.6})
 review24 = Review.create!({author_id: user4.id, movie_id: movie9.id, body: "The story stumbles ever so slight but it is ultimately fun, brilliantly acted and incredibly stylish.", score: 2.5})
-review25 = Review.create!({author_id: user5.id, movie_id: movie10.id, body: "Wouldn't it be great if mental illness really was as adorable as it is in the movies?", score: 2.4})
-review26 = Review.create!({author_id: user6.id, movie_id: movie11.id, body: "Another slice of overlong, high concept hokum.", score: 2.3})
+review25 = Review.create!({author_id: uer6.id, movie_id: movie10.id, body: "Wouldn't it be great if mental illness really was as adorable as it is in the movies?", score: 2.4})
+review26 = Review.create!({author_id: user5.id, movie_id: movie11.id, body: "Another slice of overlong, high concept hokum.", score: 2.3})
 review27 = Review.create!({author_id: user7.id, movie_id: movie12.id, body: "No matter how much this film tries to big itself up, it's still about a woman who re-invented the mop.", score: 2.2})
 review28 = Review.create!({author_id: user8.id, movie_id: movie13.id, body: "Whatever you do, don't pay attention.", score: 2.1})
 review29 = Review.create!({author_id: user9.id, movie_id: movie14.id, body: "I think the problem is inherent in the format.", score: 2.0})
@@ -163,8 +156,8 @@ review40 = Review.create!({author_id: user10.id, movie_id: movie5.id, body: "Dir
 review41 = Review.create!({author_id: user1.id, movie_id: movie4.id, body: "Much of this takes place in the early 1970s, which gives the filmmakers an excuse to haul out lots of vintage kitsch and make some rather tasteless references to the Vietnam war.", score: 0.7})
 review42 = Review.create!({author_id: user2.id, movie_id: movie3.id, body: "It seems almost cruel to take beloved child archetypes and turn them into projections for adult angst.", score: 0.6})
 review43 = Review.create!({author_id: user3.id, movie_id: movie2.id, body: "The main tension of the story is a constant vuvuzela-like interruption in the suspension of disbelief.", score: 0.5})
-review44 = Review.create!({author_id: user4.id, movie_id: movie1.id, body: "The action, directed by Shane Black, ranges from passable to interminable.", score: 0.4})
-review45 = Review.create!({author_id: user5.id, movie_id: movie15.id, body: "Affleck gets the tone mostly right (his use of natural lighting in the film's final stretch is impressive), but he has yet to completely find his footing as a director.", score: 0.3})
+review44 = Review.create!({author_id: user5.id, movie_id: movie1.id, body: "The action, directed by Shane Black, ranges from passable to interminable.", score: 0.4})
+review45 = Review.create!({author_id: user4.id, movie_id: movie15.id, body: "Affleck gets the tone mostly right (his use of natural lighting in the film's final stretch is impressive), but he has yet to completely find his footing as a director.", score: 0.3})
 
 Casting.destroy_all
 

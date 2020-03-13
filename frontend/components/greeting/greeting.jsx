@@ -10,11 +10,6 @@ import { Link } from "react-router-dom"
                         <Link className="header-link" to="/"> Sprouting Potatoes</Link>
                     </div>
 
-                    <div className="search-box">
-                        <input className="search-bar" type="text" name="" placeholder="Search movie or actor"/>
-                            <i className="fas fa-search"></i>
-                    </div>
-
                     <div className="right-nav"> 
                         <button className="greeting-btn" onClick={ () => openModal('signin')}>Sign In</button>                
                         <button className="greeting-btn" onClick={ () => openModal('signup')}>Sign Up</button>
@@ -30,20 +25,15 @@ import { Link } from "react-router-dom"
                         <Link className="header-link" to="/"> Sprouting Potatoes </Link>
                     </div>
 
-                    {/* <div className="search-box">
-                        <input className="search-bar" type="text" name="" placeholder="Search movie or actor" />
-                        <i className="fas fa-search"></i>
-                    </div> */}
-
                     <div className="right-nav-signedin">
                             <i className="fas fa-user"></i>
                                 &nbsp;&nbsp;
 
                                 <div className="dropdown-trigger">
-                            <button className="dropdown-btn" >{currentUser.first_name}  ▾ </button>
+                                    <button className="dropdown-btn" >{currentUser.first_name}  ▾ </button>
                                    
                                     <ul className="dropdown-items">
-                                        <li>
+                                        <li className="dropdown-li">
                                         <button className="signout-btn" onClick={signout}>signout</button>
                                         </li>
                                     </ul>

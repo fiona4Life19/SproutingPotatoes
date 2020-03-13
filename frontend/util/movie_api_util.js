@@ -1,6 +1,6 @@
-export const fetchmovie = (id) => {
+export const fetchMovie = (id) => {
     return $.ajax ({
-        url: "/api/movies/:id",
+        url: `/api/movies/${id}`,
         method: "GET"
     })
 }
@@ -11,3 +11,19 @@ export const fetchMovies = () => {
         method: "GET"
     })
 }
+
+export const createReview = (review) => {
+    return $.ajax({
+        url: "api/reviews",
+        method: "POST",
+        data: {review}
+    })
+}
+
+export const fetchReviews = () => {
+    return $.ajax({
+        url: "api/reviews",
+        method: "GET"
+    })
+}
+

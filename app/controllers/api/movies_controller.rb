@@ -1,7 +1,8 @@
 class Api::MoviesController < ApplicationController
 
     def show 
-        @movie = Movie.find_by(params[:id])
+        Movie.includes(reviews: [:author])
+        @movie = Movie.find_by(id: params[:id])
         render :show
     end 
 
@@ -9,4 +10,6 @@ class Api::MoviesController < ApplicationController
         @movies = Movie.all 
         render :index
     end 
+
+
 end

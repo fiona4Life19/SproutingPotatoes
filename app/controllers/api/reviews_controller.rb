@@ -7,6 +7,11 @@ class Api::ReviewsController < ApplicationController
         render :show 
     end 
 
+    def index 
+        @reviews = Review.all 
+        render :index
+    end 
+
     def create 
         @review = current_user.reviews.new(review_params)
 
@@ -20,7 +25,7 @@ class Api::ReviewsController < ApplicationController
     private 
 
     def review_params
-        params.require(:review).permit(:rating, :body, :movie_id, :author_id)
+        params.require(:review).permit(:body, :movie_id, :score)
     end  
 
 end

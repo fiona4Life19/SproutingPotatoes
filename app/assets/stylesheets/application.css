@@ -273,14 +273,6 @@
     transform: translateY(2px)
  }
 
- /* .search-box {
-    display: flex;
-    border-radius: 5px;
-    color: white;
-    position: relative;
-    font-size: 20px;
- } */
-
  .fa-search{
     color: white;
     justify-content: center;
@@ -392,11 +384,6 @@
     border-radius: 7px;
 }
 
-.image-slide{
-    height: 500px; 
-    width: 500px;
-}
-
 .dropdown-btn > li:hover {
     display: block;
     background-color: white;
@@ -411,7 +398,7 @@ ul {
     padding: 0px;
 }
 
-li:hover {
+.dropdown-li:hover {
     display: block;
     color: #fa320a;
     font-weight: bold;
@@ -420,7 +407,7 @@ li:hover {
     cursor: pointer;
 }
 
-li {
+.dropdown-li {
     background-color: white;
     font-weight: bold;
     font-size: 15px;
@@ -457,11 +444,28 @@ input[type="text"] {
 
 .card {
     height: 200px;
-    width: 200px;
+    width: 175px;
     border: red;
     list-style: none;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
     transition: 0.3s ease;
+    background-color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px; 
+    padding: 10px;
+    border: black;
+    border-radius: 6px;
+   
+}
+
+.card:hover {
+    display: block;
+    color: #fa320a;
+    font-weight: bold;
+    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .card:hover{
@@ -480,8 +484,6 @@ input[type="text"] {
 }
 
 .cards:hover{
-    /* margin-right: 100px;
-    margin-left: 100px; */
     cursor: pointer;
 }
 
@@ -497,4 +499,108 @@ input[type="text"] {
     padding: 50px, 50px, 50px, 50px;
 }
 
+.movie-li {
+    height: 400px;
+    width: 500px;
+    background-color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin: 10px; 
+    padding: 10px;
+    border: black;
+    border-radius: 6px;
+    
+}
 
+.trailer-slides{
+    width: 600px;
+    height: 400px;
+    margin-left: 125px;
+    margin-top: 50px;
+    transform: translateX(110px)
+}
+
+.actor-pic{
+    height: 75px;
+    width: 75px;
+    align-items: center;
+
+}
+
+.actors-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: white;
+    margin: 10px;
+    border-radius: 7px;
+    align-items: center;
+    padding: 10px;
+    width: 130px;
+}
+
+.castings-container{
+    display: flex;
+    width: 100%;
+}
+
+.main-movie-pic {
+    height: 30%; 
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.speech-bubble{
+    position: relative; 
+    background: white;
+    border-radius: .4em; 
+    height: 150px;
+    width: 300px; 
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.7);
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+.speech-bubble:after{
+    content: '';
+    position: absolute; 
+    bottom: 0;
+    left: 50%; 
+    width: 0; 
+    height: 0; 
+    border: 20px solid transparent; 
+    border-top-color: white;
+    border-bottom: 0; 
+    border-right: 0; 
+    margin-left: -10px; 
+    margin-bottom: -20px;
+}
+
+
+.review-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.movie-info{
+    align-items: center;
+}
+
+.movie-li-item{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.review-score{
+    color:red;
+    font-weight: bold;
+}
+
+.movie-detail-header{
+    color: white
+}

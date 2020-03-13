@@ -4,4 +4,8 @@ class Actor < ApplicationRecord
         foreign_key: :actor,
         class_name: :Casting
 
+    has_many :movies, 
+        through: :castings,
+        source: :movie
+
 end
