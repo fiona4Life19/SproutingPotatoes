@@ -78,29 +78,14 @@ const App = () => {
 }
 ```
 
+# Future Directions 
+
+* Profile Page - A User will be able to create and edit a profile
+       
+* AWS implementation - Spouting Potatoes will contain storage on AWS for tailers and images that link to movies and actors
+
+* Actors Show Page - A show page that will list information about an actor including there 
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# FullStack
