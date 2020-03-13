@@ -7,7 +7,7 @@
 Sprouting Potatoes live is a full stack web application inspired by Rotten Tomatoes. Sprouting Potatoes uses PostgreSQL 12 database for storage. Sprouting Potatoes incorperates the framework Ruby on Rails in the backend and React and Redux on the front. 
 
 
-# Feature and Implementation 
+# Features and Implementation 
 
 ## Index of Movies 
 
@@ -29,7 +29,27 @@ The Sprouting Potatoes home page has a carousuel that allows a user to scroll th
 ![trailer](/app/assets/images/trailer.png) 
 
 
+# Challanges 
 
+One of my main challenges while programming Sprouting Potatoes was getting my Carousel to increment slides. The solution to my problem was to refactor my code and add a variable to increment my index. 
+
+```Javascript
+previousSlide(e) {
+        e.preventDefault()
+        let index = this.state.activeIndex;
+        let slidesLength = imgUrls.length
+
+        if (index < 1) {
+            index = slidesLength
+        }
+
+        index -=1;
+
+        this.setState({
+            activeIndex: index
+        })
+    }
+```
 
 
 
