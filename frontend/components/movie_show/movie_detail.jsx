@@ -34,7 +34,7 @@ const MovieDetail = ({movie, reviews, actors, authors}) => {
     )
 
     const actorsInfo = actors.map((actor) => <div className="actors-container">
-                                                <img className="actor-pic" src="https://resizing.flixster.com/-L66eIrtpXr4EChE-2ezEyL_IJY=/421x600/v1.cjszNjcyNTtqOzE4MzYwOzEyMDA7NDIxOzYwMA" alt=""/>
+                                                <img className="actor-pic" src={actor.photoUrl} alt=""/>
                                                 <span className="actor-info">{actor.first_name} {actor.last_name} </span>
                                             </div>
     )

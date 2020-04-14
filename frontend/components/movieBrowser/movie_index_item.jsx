@@ -19,7 +19,7 @@ class MovieIndexItem extends React.Component {
       return(
         <div className="cards" onClick={this.handleClick}>
           <div className="">
-            <img className="card-img" src="https://cdn10.bigcommerce.com/s-vzuks4/products/2674/images/3491/Baby_Driver__89942.1505228769.1280.1280.jpg?c=2" alt="" />
+            <img className="card-img" src={movie.photoUrl} alt="" />
           </div>
 
           <div className="">
