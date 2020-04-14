@@ -15,25 +15,14 @@ class MovieShow extends React.Component {
     }
 
     render() {
-        const {movie, actors, reviews, authors} = this.props
+        const {movie, actors, reviews, authors, movieId} = this.props
       
         if (!movie) {
             return null
         }
         return(
         <div className="single-movie-show"> 
-                <MovieDetail movie={movie} actors={actors} reviews={reviews} authors={authors}/>
-            <div className="right-half-show">
-                <ReviewLink 
-                    component={ReviewFormContainer}
-                    to={`/benches/${movieId}/review`}
-                    label="Write a Review"
-                />
-                <ProtectedRoute 
-                    path="/benches/:movieId/review"
-                    component={ReviewFormContainer}
-                />
-            </div>
+                <MovieDetail  movieId={movieId} movie={movie} actors={actors} reviews={reviews} authors={authors}/>
         </div>
         )
     }

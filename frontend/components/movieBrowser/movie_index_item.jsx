@@ -14,6 +14,7 @@ class MovieIndexItem extends React.Component {
     }
 
     render() {
+      debugger
       const {movie} = this.props
       return(
         <div className="cards" onClick={this.handleClick}>

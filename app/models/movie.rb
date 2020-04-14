@@ -1,5 +1,7 @@
 class Movie < ApplicationRecord
 
+    has_one_attached :photo
+
     has_many :reviews, 
         foreign_key: :movie_id,
         class_name: :Review

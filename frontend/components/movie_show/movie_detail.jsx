@@ -1,7 +1,11 @@
 import React from "react"
 import ReviewListItem from "../reviews/review_list_item"
+import { ProtectedRoute } from "../../util/route_util"
+import { ReviewLink } from "../../util/link_util"
+import ReviewFormContainer from "../reviews/review_form_container"
+import ReviewForm from "../reviews/review_form"
 
-const reviewList = (review) => (
+const reviewList = (reviews) => (
     reviews.map(review => (
         <ReviewListItem
             review={review}
@@ -24,7 +28,9 @@ const MovieDetail = ({movie, reviews, actors, authors}) => {
         return (<div className="speech-bubble">
             <p>{review.body} </p>
             <p className="review-score"> 🥔{review.score} {first} {last} </p>
-        </div> )}
+        </div> )
+        }
+
     )
 
     const actorsInfo = actors.map((actor) => <div className="actors-container">
@@ -32,23 +38,38 @@ const MovieDetail = ({movie, reviews, actors, authors}) => {
                                                 <span className="actor-info">{actor.first_name} {actor.last_name} </span>
                                             </div>
     )
-    
+    debugger
     return(
         <div>
 
-            <img className="main-movie-pic" src="https://static.rogerebert.com/uploads/review/primary_image/reviews/the-rundown/hero_The-Rundown-rosario-dawson-2.jpg" alt=""/>
+            <img className="main-movie-pic" src={movie.photoUrl} alt=""/>
 
-            <div className="movie-info">
+            <div className="movie-info-review">
+                <div className="movie-info">
                 <ul className="movie-li"> 
                     <h1>{movie.title}</h1>
-                    <li className="movie-li-item">Synopsis: {movie.synopsis}</li>
-                    <li className="movie-li-item">Genre: {movie.genre} </li>
-                    <li className="movie-li-item">Release Date: {movie.release_date}</li>
-                    <li className="movie-li-item">Average Score: {movie.score}</li>
-                    <li className="movie-li-item">Rating: {movie.rate}</li>
-                    <li className="movie-li-item">Runtime: {movie.runtime}</li>
+                        <li className="movie-li-item">Synopsis: {movie.synopsis}</li>
+                        <li className="movie-li-item">Genre: {movie.genre} </li>
+                        <li className="movie-li-item">Release Date: {movie.release_date}</li>
+                        <li className="movie-li-item">Average Score: {movie.score}</li>
+                        <li className="movie-li-item">Rating: {movie.rate}</li>
+                        <li className="movie-li-item">Runtime: {movie.runtime}</li>
                 </ul>
             </div>
+                    <div className="right-half-show">
+                        <ReviewLink
+                            component={ReviewFormContainer}
+                            to={`/movies/${movie.id}/review`}
+                            label="Write a Review"
+                        />
+                        <ProtectedRoute
+                            path="/movies/:movieId/review"
+                            component={ReviewFormContainer}
+                        />
+                    </div>
+            </div>
+            
+
 
             <h1 className="movie-detail-header" >Reviews </h1>
             <div className="review-container">

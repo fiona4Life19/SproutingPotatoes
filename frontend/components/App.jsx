@@ -10,8 +10,8 @@ import Greeting from "./greeting/greeting"
 import GreetingContainer from "./greeting/greeting_container"
 
 
-
 const App = () => {
+    debugger
     return (
     <div>
         <header>
