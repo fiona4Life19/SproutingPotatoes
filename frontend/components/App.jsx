@@ -1,17 +1,15 @@
 import React from "react"
-import { Route, Link, Switch } from "react-router-dom"
+import { Route, Switch } from "react-router-dom"
 import SignUpFormContainer from "./session/signup_form_container"
 import SignInFormContainer from "./session/signin_form_container"
 import { AuthRoute } from "../util/route_util"
 import Modal from './modal/modal'
 import HomeContainer from "./home/home_container"
 import MovieShowContainer from "./movie_show/movie_show_container"
-import Greeting from "./greeting/greeting"
 import GreetingContainer from "./greeting/greeting_container"
 
 
 const App = () => {
-    debugger
     return (
     <div>
         <header>

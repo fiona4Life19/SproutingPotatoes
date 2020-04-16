@@ -18,12 +18,12 @@ class ReviewForm extends React.Component{
         this.props.history.push(url)
     }
 
-    handleSumbit(e) {
+    handleSubmit(e) {
         e.preventDefault() 
         const movieId = parseInt(this.props.match.params.movieId)
-        const review = Object.assign({}, this.state, {movie_Id: movieId })
+        const review = Object.assign({}, this.state, {movie_id: movieId })
         this.props.createReview(review)
-        this.navigateToMovieShow
+        this.navigateToMovieShow()
     }
 
     update(field) {
@@ -51,9 +51,9 @@ class ReviewForm extends React.Component{
                     value={this.state.body}
                     onChange={this.update('body')}
                 />
-
-                <button onClick={this.navigateToMovieShow}>Cancel</button>
+                <input type="submit" />
                 </form>
+                <button onClick={this.navigateToMovieShow}>Cancel</button>
             </div>
 
         )

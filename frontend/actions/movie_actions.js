@@ -15,11 +15,9 @@ const receiveMovie = (payload)  => ({
     payload
 })
 
-const receiveReview = ({review, average_rating, author}) =>  ({
+const receiveReview = (review) =>  ({
     type: RECEIVE_REVIEW, 
-    review, 
-    average_rating, 
-    author
+    review
 })
 
 export const createReview = (review) => dispatch => {

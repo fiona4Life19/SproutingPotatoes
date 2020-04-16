@@ -7,8 +7,8 @@ import actorsReducer from "./actors_reducer"
 const entitiesReducer = combineReducers({
     users: usersReducer,
     movies: moviesReducer,
-    reviews: reviewsReducer,
     actors: actorsReducer,
+    reviews: reviewsReducer
 })
 
 export default entitiesReducer

@@ -10,11 +10,13 @@ class MovieIndexItem extends React.Component {
 
     handleClick() {
       const movieId = this.props.movie.id;
-      this.props.history.push(`/movies/${movieId}`)
+      this.props.fetchMovie(movieId)
+      .then(() =>
+        this.props.history.push(`/movies/${movieId}`
+      ))
     }
 
     render() {
-      debugger
       const {movie} = this.props
       return(
         <div className="cards" onClick={this.handleClick}>

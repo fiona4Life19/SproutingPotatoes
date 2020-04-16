@@ -4,5 +4,5 @@ end
 
 
 json.author do
-    json.partial! "/api/review/review", review: @review.author_id
+    json.partial! "/api/users/user", user: @review.author
 end 

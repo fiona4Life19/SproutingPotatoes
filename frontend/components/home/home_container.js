@@ -1,6 +1,6 @@
 import {connect} from "react-redux"
 import Home from "./home"
-import {fetchMovies} from "../../actions/movie_actions"
+import {fetchMovies, fetchMovie} from "../../actions/movie_actions"
 
 
 const mSTP = (state) => ({
@@ -8,7 +8,8 @@ const mSTP = (state) => ({
 })
 
 const mDTP = (dispatch) => ({
-    fetchMovies: () => dispatch(fetchMovies())
+    fetchMovies: () => dispatch(fetchMovies()),
+    fetchMovie: (movieId) => dispatch(fetchMovie(movieId))
 })
 
 export default connect(mSTP, mDTP)(Home)

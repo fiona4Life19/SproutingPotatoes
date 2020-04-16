@@ -18,9 +18,33 @@ class Api::ReviewsController < ApplicationController
         if @review.save 
             render :show 
         else   
-            render json: @review, status: 402
+            render json: @review, status: :unprocessable_entity
         end  
     end  
+
+    def edit  
+        @review = review.find(params[:id])
+        render :edit 
+    end 
+
+
+    def update
+        @review = current_user.reviews.find(params[:id])
+
+        if @review.update(review_params)
+            redirect_to movie_url(@review.movie_id)
+        else  
+            render json: @review, status: :unprocessable_entity
+        end 
+    end 
+            
+
+    def destroy 
+        @review = current_user.reviews.find(params[:id])
+        @review.destroy
+        render :show
+    end 
+
 
     private 
 

@@ -1,25 +1,25 @@
 import React from "react"
-import ReviewListItem from "../reviews/review_list_item"
+// import ReviewListItem from "../reviews/review_list_item"
 import { ProtectedRoute } from "../../util/route_util"
 import { ReviewLink } from "../../util/link_util"
 import ReviewFormContainer from "../reviews/review_form_container"
 import ReviewForm from "../reviews/review_form"
+import { deleteReview } from "../../actions/review_actions"
 
-const reviewList = (reviews) => (
-    reviews.map(review => (
-        <ReviewListItem
-            review={review}
-            key={review.id}
-        />
-    ))
-)
+// const reviewList = (reviews) => (
+//     reviews.map(review => (
+//         <ReviewListItem
+//             review={review}
+//             key={review.id}
+//         />
+//     ))
+// )
 
-
-const MovieDetail = ({movie, reviews, actors, authors}) => {
-    debugger
+const MovieDetail = ({movie, reviews, actors, authors, currentUserId, currentUser, deleteReview}) => {
 
 
     const reviewinfo = reviews.map(review => {
+        debugger
         const author_id = review.author_id
         const author = authors[author_id]
         const first = author.first_name
@@ -28,6 +28,13 @@ const MovieDetail = ({movie, reviews, actors, authors}) => {
         return (<div className="speech-bubble">
             <p>{review.body} </p>
             <p className="review-score"> 🥔{review.score} {first} {last} </p>
+
+            { currentUserId === author_id ? (
+                <button onClick={() => deleteReview(review.id)}>Delete</button>
+            ):(
+            null
+            )}
+
         </div> )
         }
 
@@ -38,7 +45,6 @@ const MovieDetail = ({movie, reviews, actors, authors}) => {
                                                 <span className="actor-info">{actor.first_name} {actor.last_name} </span>
                                             </div>
     )
-    debugger
     return(
         <div>
 

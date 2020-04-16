@@ -17,12 +17,13 @@ class Home extends React.Component {
     }
 
     render() {
-        const {movies} = this.props
+        const {movies, fetchMovie} = this.props
         return(
             <div className="home">
                 <Carousuel/>
                 <MovieIndex
-                movies={movies}
+                    movies={movies}
+                    fetchMovie={fetchMovie}
                 />
             </div>
         )
