@@ -1,6 +1,6 @@
 
 import { RECEIVE_CURRENT_USER} from '../actions/sessions_actions';
-import {RECEIVE_MOVIE} from "../actions/movie_actions"
+import { RECEIVE_MOVIE } from "../actions/movie_actions"
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state) ;

@@ -3,12 +3,10 @@ import React from "react"
 const ImageSlide = ({url}) => {
     const styles = {
         backgroundImage: `${url}`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
     }
 
     return (
-        <div styles={styles}>
+        <div styles={styles} className="image-slide">
             <iframe className="trailer-slides"
                 src={styles.backgroundImage}>
             </iframe>

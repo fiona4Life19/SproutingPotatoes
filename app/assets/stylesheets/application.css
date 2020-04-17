@@ -15,6 +15,10 @@
  */
 
 
+ .main-div{
+     background-color: white;
+ }
+
  .greeting {
      float: right;
      display: flex;
@@ -112,10 +116,8 @@
     height: 15px;
     padding-right: 15px;
     padding-left: 15px;
-    padding-top: 30px;
+    padding-top: 50px;
     padding-bottom: 30px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
 }
 
 .title{
@@ -157,10 +159,11 @@
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
     display: flex;
     align-items: center;
-    transform: translateX(5px);
+    padding-left: 20px;
+    transform: translateY(-8px);
     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
 }
 
@@ -213,7 +216,7 @@
 
 .fa-user{ 
     color: white;
-    font-size: 15px;
+    transform: translateY(-10px);
 }
 
 .signup-modal-footer {
@@ -358,7 +361,8 @@
     background-color:  #fa320a;
     text-decoration: none;
     border: none;
-    font-size: 15px;
+    font-size: 20px;
+    transform: translateY(-10px);
     color: white;
     font-family: "Franklin Gothic Medium', Arial, sans-serif";
     font-weight: bold;
@@ -366,6 +370,10 @@
 
 .dropdown-btn:hover {
     cursor: pointer;
+}
+
+.home {
+    display: flex
 }
 
 
@@ -414,11 +422,11 @@ ul {
     margin: 10px; 
     padding: 10px;
     border: black;
-    border-radius: 6px;
+    border-radius: 3px;
 }
 
 .signout-btn{
-    font-size: 17px;
+    font-size: 20px;
     font-family: "Franklin Gothic Medium', Arial, sans-serif";
     border: none;
     font-weight: bold;
@@ -532,6 +540,7 @@ input[type="text"] {
     flex-direction: column;
     text-align: center;
     background-color: white;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
     margin: 10px;
     border-radius: 7px;
     align-items: center;
@@ -558,7 +567,9 @@ input[type="text"] {
     height: 150px;
     width: 300px; 
     color: black;
-    box-shadow: rgba(0, 0, 0, 0.7);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    border-style: solid;
+    border: black;
     margin: 10px;
     padding: 10px;
     justify-content: space-between;
@@ -566,7 +577,7 @@ input[type="text"] {
     flex-direction: column;
 }
 
-.speech-bubble:after{
+.speech-bubble:after {
     content: '';
     position: absolute; 
     bottom: 0;
@@ -602,7 +613,16 @@ input[type="text"] {
 }
 
 .movie-detail-header{
-    color: white
+    color: black
+}
+
+.fa-star{
+    color: grey
+}
+
+.fa-star:hover{
+    color: yellow;
+    cursor: pointer;
 }
 
 .movie-info-review{
@@ -611,4 +631,10 @@ input[type="text"] {
 
 .right-half-show{
     justify-content: baseline;
+}
+
+.scorecard{
+    margin-top: 50px;
+    margin-left: 150px;
+    font-size: 25px;
 }

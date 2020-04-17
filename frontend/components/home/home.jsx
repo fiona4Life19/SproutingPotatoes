@@ -18,13 +18,34 @@ class Home extends React.Component {
 
     render() {
         const {movies, fetchMovie} = this.props
+
+        debugger
+        const sorted = movies.sort((m1, m2) => 
+            m1.score < m2.score ? 1 : m1.score > m2.score ? -1 : 0
+        )
+
+        const scorecard = 
+            sorted.map((movie) => <div className="movie-list"> 
+                                    {movie.score} {movie.title}  
+                                </div> 
+            )
+
+    
         return(
-            <div className="home">
-                <Carousuel/>
-                <MovieIndex
-                    movies={movies}
-                    fetchMovie={fetchMovie}
-                />
+            <div>
+                <div className="home">
+                        <Carousuel/>
+                    <label className="scorecard"> Top Movies:
+                        {scorecard}
+                    </label>
+                </div>
+            
+                <div>
+                    <MovieIndex
+                        movies={movies}
+                        fetchMovie={fetchMovie}
+                    />
+                </div>
             </div>
         )
     }

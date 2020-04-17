@@ -11,8 +11,7 @@ const reviewsReducer = (state = {}, action) => {
         case RECEIVE_REVIEWS: 
             return action.reviews
         case RECEIVE_REVIEW:
-            debugger
-            nextState[action.review.id] = action.review
+            nextState[action.review.review.id] = action.review.review
             return nextState
         case DELETE_REVIEW: 
             delete nextState[action.reviewId]

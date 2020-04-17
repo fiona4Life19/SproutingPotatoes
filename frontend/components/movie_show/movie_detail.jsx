@@ -15,11 +15,10 @@ import { deleteReview } from "../../actions/review_actions"
 //     ))
 // )
 
-const MovieDetail = ({movie, reviews, actors, authors, currentUserId, currentUser, deleteReview}) => {
+const MovieDetail = ({movie, reviews, actors, authors, currentUserId, deleteReview, openModal}) => {
 
-
+    debugger
     const reviewinfo = reviews.map(review => {
-        debugger
         const author_id = review.author_id
         const author = authors[author_id]
         const first = author.first_name
@@ -31,24 +30,32 @@ const MovieDetail = ({movie, reviews, actors, authors, currentUserId, currentUse
 
             { currentUserId === author_id ? (
                 <button onClick={() => deleteReview(review.id)}>Delete</button>
-            ):(
-            null
-            )}
+                ) : (
+                null
+                )
+            }
 
         </div> )
         }
 
     )
 
-    const actorsInfo = actors.map((actor) => <div className="actors-container">
-                                                <img className="actor-pic" src={actor.photoUrl} alt=""/>
-                                                <span className="actor-info">{actor.first_name} {actor.last_name} </span>
-                                            </div>
-    )
+    const actorsInfo = actors.map((actor) => 
+    
+        <div className="actors-container">
+            <img className="actor-pic" src={actor.photoUrl} alt=""/>
+            <span className="actor-info">{actor.first_name} {actor.last_name} </span>
+        </div>
+)
     return(
         <div>
 
             <img className="main-movie-pic" src={movie.photoUrl} alt=""/>
+
+            <iframe  className="review-vid" width="560" height="315" src="https://www.youtube.com/embed/eQd4o3UWsvc" 
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+                picture-in-picture" allowfullscreen>
+            </iframe>
 
             <div className="movie-info-review">
                 <div className="movie-info">
@@ -62,17 +69,10 @@ const MovieDetail = ({movie, reviews, actors, authors, currentUserId, currentUse
                         <li className="movie-li-item">Runtime: {movie.runtime}</li>
                 </ul>
             </div>
-                    <div className="right-half-show">
-                        <ReviewLink
-                            component={ReviewFormContainer}
-                            to={`/movies/${movie.id}/review`}
-                            label="Write a Review"
-                        />
-                        <ProtectedRoute
-                            path="/movies/:movieId/review"
-                            component={ReviewFormContainer}
-                        />
-                    </div>
+                <button onClick={() => openModal('review')} className="right-half-show" ><ReviewFormContainer movieId={movie.id} />
+                </button>
+                
+
             </div>
             
 

@@ -21,7 +21,7 @@ const removeReview = (reviewId) => ({
     reviewId
 })
 
-export const fetchReviews = (reviews) => dispatch => {
+export const fetchReviews = () => dispatch => {
     return APIUtil.fetchReviews() 
     .then((reviews) => dispatch(receiveReviews(reviews)))
 }
@@ -42,7 +42,6 @@ export const updateReview = (review) => dispatch => {
 }
 
 export const deleteReview = (reviewId) => dispatch => {
-    debugger
     return APIUtil.deleteReview(reviewId) 
     .then(() => dispatch(removeReview(reviewId)))
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { openModal } from "../../actions/modal_actions";
 
 class ReviewForm extends React.Component{
     constructor(props) {
@@ -20,10 +21,15 @@ class ReviewForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault() 
-        const movieId = parseInt(this.props.match.params.movieId)
+        debugger
+
+        // const review = parseInt(this.props.match.params.movieId)
+        // const movieId = this.props.movieId
+        const movieId = this.props.location.pathname.replace(/[^0-9]/g, "")
         const review = Object.assign({}, this.state, {movie_id: movieId })
+        debugger
         this.props.createReview(review)
-        this.navigateToMovieShow()
+        .then(this.props.closeModal())
     }
 
     update(field) {
@@ -32,25 +38,26 @@ class ReviewForm extends React.Component{
 
 
     render() {
+
+        let starContainer = []
+        for (let index = 0; index < 5; index++) {
+            starContainer.push(
+                 <i className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 3 })}   ></i> )
+        }
+
+
         return(
             <div class="movie-review-form">
                 <form onSubmit={this.handleSubmit}>
-                    <label>Score:</label>
-                    <br/>
-                    <input type="number" value={this.state.score}
-                    onChange={this.update('score')}
-                    />
-                <br/>
-
-                <label>Review</label>
-                <br/>
+                {starContainer}
 
                 <textarea               
-                    cols="30"
-                    rows="10"
+                    cols="100"
+                    rows="30"
                     value={this.state.body}
                     onChange={this.update('body')}
                 />
+
                 <input type="submit" />
                 </form>
                 <button onClick={this.navigateToMovieShow}>Cancel</button>

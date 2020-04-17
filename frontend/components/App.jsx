@@ -2,19 +2,20 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 import SignUpFormContainer from "./session/signup_form_container"
 import SignInFormContainer from "./session/signin_form_container"
-import { AuthRoute } from "../util/route_util"
+import { AuthRoute, ProtectedRoute } from "../util/route_util"
 import Modal from './modal/modal'
 import HomeContainer from "./home/home_container"
 import MovieShowContainer from "./movie_show/movie_show_container"
 import GreetingContainer from "./greeting/greeting_container"
+import ReviewFormContainer from "./reviews/review_form_container"
 
 
 const App = () => {
     return (
-    <div>
+    <div className= "main-div">
         <header>
-           < Modal/>
-           < GreetingContainer/>
+           < Modal />
+           < GreetingContainer />
         </header>
 
         <Switch>

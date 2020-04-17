@@ -9,36 +9,41 @@ class MovieShow extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         if (!this.props.movie) {
-            debugger
             this.props.fetchMovie(this.props.match.params.movieId)
         }
     }
 
 
     render() {
-        const {movie, actors, reviews, authors, movieId, currentUserId, currentUser, deleteReview } = this.props
+
+        const { movie, 
+                actors, 
+                reviews, 
+                authors, 
+                currentUserId, 
+                deleteReview, 
+                openModal
+        } 
+        = this.props
 
         if(!movie) {
             return null
         }
       
+        return (
+            <div className="single-movie-show"> 
+                    <MovieDetail   
+                        movie={movie} 
+                        actors={actors} 
+                        reviews={reviews} 
+                        authors={authors}
+                        currentUserId={currentUserId}
+                        deleteReview={deleteReview}
+                        openModal={openModal}
 
-        return(
-        <div className="single-movie-show"> 
-                <MovieDetail   
-                    movieId={movieId} 
-                    movie={movie} 
-                    actors={actors} 
-                    reviews={reviews} 
-                    authors={authors}
-                    currentUserId={currentUserId}
-                    currentUser={currentUser}
-                    deleteReview={deleteReview}
-                />
-            
-        </div>
+                    />    
+            </div>
         )
     }
 }
