@@ -1,15 +1,17 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import { openModal } from "../../actions/modal_actions";
 
 class ReviewForm extends React.Component{
     constructor(props) {
         super(props)
 
         this.state = {
+            // score: this.props.review.score ? this.props.review.score : null,
+            // body: this.props.review.body ? this.props.review.body : ""
             score: 5,
-            body: ''
+            body: ""
         }
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.navigateToMovieShow = this.navigateToMovieShow.bind(this);
     }
@@ -36,6 +38,16 @@ class ReviewForm extends React.Component{
         return e => this.setState({ [field]: e.currentTarget.value})
     }
 
+    function() {
+        $('.fa-star').hover(function() {
+            $('.fa-star').addClass('show')
+        })
+
+        $('.fa-star').mouseleave(function() {
+            $('.fa-star').removeClass('show')
+        });
+    }
+
 
     render() {
 
@@ -48,19 +60,25 @@ class ReviewForm extends React.Component{
 
         return(
             <div class="movie-review-form">
+                
+                <button id="star1" className="stars" class="fas fa-star fa-3x " value={this.state.score} onClick={() => this.setState({ score: 1 })}>1</button>
+                <button id="star2" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 2 })}></button>
+                <button id="star3" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 3 })}></button>
+                <button id="star4" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 4 })}></button>
+                <button id="star5" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 5 })}></button>
+                   
+                 
                 <form onSubmit={this.handleSubmit}>
-                {starContainer}
+                    <textarea               
+                        cols="100"
+                        rows="30"
+                        value={this.state.body}
+                        onChange={this.update('body')}
+                    />
 
-                <textarea               
-                    cols="100"
-                    rows="30"
-                    value={this.state.body}
-                    onChange={this.update('body')}
-                />
-
-                <input type="submit" />
+                    <input type="submit" />
                 </form>
-                <button onClick={this.navigateToMovieShow}>Cancel</button>
+                <button className="cancel" >Cancel</button>
             </div>
 
         )

@@ -617,12 +617,24 @@ input[type="text"] {
 }
 
 .fa-star{
-    color: grey
+    color: grey;
+    background-color: transparent;
+    border-style: none;
+   
 }
 
-.fa-star:hover{
+.fa-star:focus {
     color: yellow;
-    cursor: pointer;
+}
+
+
+.fa-star:hover {
+    color: yellow;
+    overflow-y: scroll;
+}
+
+.fa-star.show{
+    color: yellow;
 }
 
 .movie-info-review{
@@ -637,4 +649,13 @@ input[type="text"] {
     margin-top: 50px;
     margin-left: 150px;
     font-size: 25px;
+}
+
+.cancel:focus{
+    color: yellow;
+}
+
+.review-button {
+    border-style: none;
+    transform: translateX(100px);
 }

@@ -24,9 +24,11 @@ class Home extends React.Component {
             m1.score < m2.score ? 1 : m1.score > m2.score ? -1 : 0
         )
 
+        
+
         const scorecard = 
             sorted.map((movie) => <div className="movie-list"> 
-                                    {movie.score} {movie.title}  
+                                    🥔 {movie.score} &nbsp; {movie.title}  
                                 </div> 
             )
 
