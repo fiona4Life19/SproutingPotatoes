@@ -1,18 +1,19 @@
 import React from "react"
-import ReviewIndexItem from "../reviews/review_index_item"
+import ReviewIndexItemContainer from "../reviews/review_index_item_container"
 import ActorsIndexItem from "../actors/actors_index_item"
 
 
-class MovieDetail extends React.Component{
+class MovieDetail extends React.Component {
     constructor(props) {
         super(props) 
 
     }
 
     render() {
-        if(!this.props.authors) {
+        if (!this.props.authors) {
             return null
         }
+        debugger
 
         const {
             movie, 
@@ -23,7 +24,8 @@ class MovieDetail extends React.Component{
             deleteReview, 
             openModal, 
             currentUser, 
-            // updateReview
+            updateReview, 
+            closeModal
         } 
         = this.props
 
@@ -34,8 +36,8 @@ class MovieDetail extends React.Component{
                 <img className="main-movie-pic" src={movie.photoUrl} alt=""/>
 
                 <iframe  className="review-vid" width="560" height="315" src="https://www.youtube.com/embed/eQd4o3UWsvc" 
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; 
-                    picture-in-picture" allowfullscreen>
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+                    picture-in-picture">
                 </iframe>
 
                 <div className="movie-info-review">
@@ -76,13 +78,14 @@ class MovieDetail extends React.Component{
                     <h1 className="movie-detail-header" >Reviews </h1>
                         <div className="review-container">
                             {
-                            reviews.map((review) => <ReviewIndexItem 
-                                                        key = {review.id}
+                            reviews.map((review) => < ReviewIndexItemContainer 
+                                                        key={review.id}
                                                         review={review} 
                                                         deleteReview={deleteReview}
-                                                        // updateReview={updateReview}
                                                         authors={authors}
                                                         currentUserId={currentUserId}
+                                                        updateReview={updateReview}
+                                                        closeModal={closeModal}
                                                         />       
                                         )    
                             }

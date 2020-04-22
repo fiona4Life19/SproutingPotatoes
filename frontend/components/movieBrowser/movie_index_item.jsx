@@ -9,6 +9,7 @@ class MovieIndexItem extends React.Component {
     }
 
     handleClick() {
+      debugger
       const movieId = this.props.movie.id;
       this.props.fetchMovie(movieId)
       .then(() =>

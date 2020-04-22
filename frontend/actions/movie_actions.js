@@ -1,4 +1,5 @@
 import * as APIUtil from "../util/movie_api_util"
+
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";

@@ -1,4 +1,4 @@
-import { RECEIVE_MOVIES, RECEIVE_MOVIE, RECEIVE_REVIEW } from "../actions/movie_actions"
+import { RECEIVE_MOVIES, RECEIVE_MOVIE} from "../actions/movie_actions"
 
 const moviesReducer = (state = {}, action) => {
     Object.freeze(state) 
@@ -8,8 +8,6 @@ const moviesReducer = (state = {}, action) => {
             return action.movies 
         case RECEIVE_MOVIE: 
             return action.payload.movie
-        case RECEIVE_REVIEW: 
-            nextState[action.review.id] = action.review
         default: 
             return state
     }

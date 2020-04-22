@@ -1,6 +1,6 @@
 import React from "react";
 import MovieDetail from "./movie_detail";
-import {withRouter} from "react-router-dom"
+import { withRouter } from "react-router-dom"
 
 
 class MovieShow extends React.Component {
@@ -26,8 +26,8 @@ class MovieShow extends React.Component {
                 openModal, 
                 openEditModal,
                 currentUser, 
-                // updateReview,
-                closeModal
+                closeModal,
+                updateReview
         } 
         = this.props
 
@@ -47,8 +47,8 @@ class MovieShow extends React.Component {
                         openModal={openModal}
                         openEditModal={openEditModal}
                         currentUser={currentUser}
-                        // updateReview={updateReview}
                         closeModal={closeModal}
+                        updateReview={updateReview}
                     />    
             </div>
         )

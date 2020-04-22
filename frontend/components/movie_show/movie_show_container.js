@@ -23,8 +23,8 @@ const mDTP = (dispatch) => ({
     deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
     openModal: (modal) => dispatch(openModal(modal)),
     openEditModal: (modal, review) => dispatch(openEditModal(modal, review)),
-    // updateReview: (review) => dispatch(updateReview(review)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    updateReview: (review) => dispatch(updateReview(review))
 })
 
 
