@@ -7,7 +7,6 @@ import {openModal, openEditModal, closeModal} from "../../actions/modal_actions"
 
 
 const mSTP = (state, ownProps) => {
-    debugger
     return{
     movieId: ownProps.match.params.movieId,
     movie: state.entities.movies[ownProps.match.params.movieId],
@@ -24,7 +23,7 @@ const mDTP = (dispatch) => ({
     deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
     openModal: (modal) => dispatch(openModal(modal)),
     openEditModal: (modal, review) => dispatch(openEditModal(modal, review)),
-    updateReview: (review) => dispatch(updateReview(review)),
+    // updateReview: (review) => dispatch(updateReview(review)),
     closeModal: () => dispatch(closeModal())
 })
 

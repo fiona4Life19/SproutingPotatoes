@@ -32,7 +32,7 @@ class Api::ReviewsController < ApplicationController
         @review = current_user.reviews.find(params[:id])
 
         if @review.update(review_params)
-            redirect_to movie_url(@review.movie_id)
+            render :show
         else  
             render json: @review, status: :unprocessable_entity
         end 
@@ -49,7 +49,7 @@ class Api::ReviewsController < ApplicationController
     private 
 
     def review_params
-        params.require(:review).permit(:body, :movie_id, :score)
+        params.require(:review).permit(:body, :movie_id, :score, :author_id)
     end  
 
 end
