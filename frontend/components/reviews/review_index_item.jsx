@@ -11,6 +11,8 @@ class ReviewIndexItem extends React.Component {
         body: this.props.review.body
     }    
 
+    this.highlightStars = this.highlightStars.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
     this.handleUpdate = this.handleUpdate.bind(this)
     this.editReviewModal = this.editReviewModal.bind(this)
     this.reviewBubble = this.reviewBubble.bind(this)
@@ -21,40 +23,75 @@ class ReviewIndexItem extends React.Component {
       return e => this.setState({ [field]: e.currentTarget.value})
   }
 
-  editReviewModal() {
-      debugger
-    return (
-      <div className="modal-background">
-        <form>
-          <i className="stars" class="fas fa-star ">
-            {" "}
-          </i>
-          <i className="stars" class="fas fa-star ">
-            {" "}
-          </i>
-          <i className="stars" class="fas fa-star ">
-            {" "}
-          </i>
-          <i className="stars" class="fas fa-star ">
-            {" "}
-          </i>
-          <i className="stars" class="fas fa-star ">
-            {" "}
-          </i>
+  handleSubmit(e) {
+      e.preventDefault()
+      this.props.updateReview(this.state)
+      .then(() => this.setState({open: false}))  
+  }
 
-          <textarea
-            cols="100"
-            rows="15"
-            value={this.state.body}
-            onChange={this.handleUpdate("body")}
-          />
-          <button onClick={() => this.props.updateReview(this.state)
-                            .then(() => this.setState({open: false}))
-            }>Update Review</button>
-        </form>
+  highlightStars(num) {
+
+    this.setState({score: num})
+
+        for(let i = 0; i < num; i += 1) {
+            let star = document.getElementById(`star${i}`)
+            star.className="yellow-btn fas fa-star fa-3x"
+        }
+        for(let i = num; i < 5; i += 1) {
+            let star = document.getElementById(`star${i}`)
+            star.className="fas fa-star fa-3x"
+        }  
+  }
+
+  editReviewModal() {
+    let btn_class = !this.state.yellow ? "fa-star" : "yellow-btn"
+
+    return (
+      <div className="movie-review-form">
+        <div className="modal-background">
+          <div className="modal-child">
+            <button
+              id="star0"
+              className={`${btn_class} fas fa-star fa-3x`}
+              onClick={() => this.highlightStars(1)}
+            ></button>
+            <button
+              id="star1"
+              className={`${btn_class} fas fa-star fa-3x`}
+              onClick={() => this.highlightStars(2)}
+            ></button>
+            <button
+              id="star2"
+              className={`${btn_class} fas fa-star fa-3x`}
+              onClick={() => this.highlightStars(3)}
+            ></button>
+            <button
+              id="star3"
+              className={`${btn_class} fas fa-star fa-3x`}
+              onClick={() => this.highlightStars(4)}
+            ></button>
+            <button
+              id="star4"
+              className={`${btn_class} fas fa-star fa-3x`}
+              onClick={() => this.highlightStars(5)}
+            ></button>
+
+            <form onSubmit={this.handleSubmit}>
+              <textarea
+                cols="100"
+                rows="15"
+                value={this.state.body}
+                onChange={this.handleUpdate("body")}
+              />
+
+              <button type="submit">Update </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
+  
   
   reviewBubble() {
     const { review, authors, updateReview } = this.props;

@@ -61,7 +61,7 @@ class ReviewForm extends React.Component{
         return(
             <div class="movie-review-form">
                 
-                <button id="star1" className="stars" class="fas fa-star fa-3x " value={this.state.score} onClick={() => this.setState({ score: 1 })}>1</button>
+                <button id="star1" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 1 })}></button>
                 <button id="star2" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 2 })}></button>
                 <button id="star3" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 3 })}></button>
                 <button id="star4" className="stars" class="fas fa-star fa-3x" value={this.state.score} onClick={() => this.setState({ score: 4 })}></button>
@@ -69,7 +69,7 @@ class ReviewForm extends React.Component{
                    
                  
                 <form onSubmit={this.handleSubmit}>
-                    <textarea               
+                    <textarea         
                         cols="100"
                         rows="30"
                         value={this.state.body}

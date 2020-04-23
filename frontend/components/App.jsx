@@ -7,7 +7,6 @@ import Modal from './modal/modal'
 import HomeContainer from "./home/home_container"
 import MovieShowContainer from "./movie_show/movie_show_container"
 import GreetingContainer from "./greeting/greeting_container"
-import ReviewFormContainer from "./reviews/review_form_container"
 
 
 const App = () => {

@@ -620,10 +620,9 @@ input[type="text"] {
     color: grey;
     background-color: transparent;
     border-style: none;
-   
 }
 
-.fa-star:focus {
+.yellow-btn{
     color: yellow;
 }
 
@@ -633,9 +632,6 @@ input[type="text"] {
     overflow-y: scroll;
 }
 
-.fa-star.show{
-    color: yellow;
-}
 
 .movie-info-review{
     display: flex;

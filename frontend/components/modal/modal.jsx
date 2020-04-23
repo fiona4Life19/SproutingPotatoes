@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import SigninFormContainer from "../session/signin_form_container"; 
 import SignupFormContainer from "../session/signup_form_container";
 import ReviewFormContainer from "../reviews/review_form_container";
-import EditReviewFormContainer from "../reviews/edit_review_form_container";
 
 const Modal = ({modal, closeModal}) => {
     if (!modal) {
@@ -23,10 +22,6 @@ const Modal = ({modal, closeModal}) => {
             debugger
             component = <ReviewFormContainer />
             break
-        case 'editReview': 
-            debugger
-            component = <EditReviewFormContainer review={review} />
-            break;
         default: 
             return null 
     }
