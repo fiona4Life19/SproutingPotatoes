@@ -47,7 +47,7 @@
      color: white
  }
 
- .logout{
+ .logout {
     font-size: 20px;
  }
 
@@ -511,7 +511,6 @@ input[type="text"] {
     height: 400px;
     width: 500px;
     background-color: white;
-    font-weight: bold;
     font-size: 15px;
     margin: 10px; 
     padding: 10px;
@@ -595,16 +594,20 @@ input[type="text"] {
 
 .review-container{
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+
 }
 
-.movie-info{
-    align-items: center;
+.movie-detail-container{
+    margin-left: 100px;
 }
 
 .movie-li-item{
     font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 5px;
+    font-family: 'Franklin Gothic FS Book sans-serif';
 }
 
 .review-score{
@@ -614,6 +617,78 @@ input[type="text"] {
 
 .movie-detail-header{
     color: black
+}
+
+.reviews-header:before{
+    content: "";
+    background: red;
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 30px;
+    height: 25px;
+}
+
+.movie-info-header:before{
+    content: "";
+    background: red;
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 30px;
+    height: 25px;
+}
+
+.cast-header:before{
+    content: "";
+    background: red;
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 30px;
+    height: 25px;
+}
+
+.rate-and-review-header:before{
+    content: "";
+    background: red;
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 30px;
+    height: 25px;
+}
+
+.reviews-header:after{
+    content: "";
+    background: red; 
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 1125px;
+    height: 25px;
+}
+
+.cast-header:after{
+    content: "";
+    background: red; 
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 1190px;
+    height: 25px;
+}
+
+.rate-and-review-header:after{
+    content: "";
+    background: red; 
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 975px;
+    height: 25px;
+}
+
+.movie-info-header:after{
+    content: "";
+    background: red; 
+    display: inline-block; 
+    transform: translateY(3px);
+    width: 1075px;
+    height: 25px;
 }
 
 .fa-star{
@@ -651,7 +726,53 @@ input[type="text"] {
     color: yellow;
 }
 
+.upper-review-button-container {
+    display: flex; 
+    justify-content: space-between;
+}
+
+
+.review-button-star-div{
+    display: flex;
+    justify-content: space-between
+}
+
+.review-user{
+    color: black;
+    transform: translateY(5px);
+}
+
 .review-button {
+    color: black;
     border-style: none;
-    transform: translateX(100px);
+    margin-right: 50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    padding: 35px 35px 35px 35px;
+    border-radius: 3px;
+    margin-left: 300px;
+}
+
+.movie-synopsis {
+    font-size: 20px;
+    font-family: 'Franklin Gothic FS Book sans-serif';
+}
+
+.movie-synopsis-container{
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.review-user-container{
+    display: flex;
+}
+
+.review-button-name{
+    font-size: 15px;
+    transform:translateY(-11px);
+    margin-left: 5px;
+}
+
+.fa-plus-circle{
+    color:rgb(59, 59, 202);
+    transform: translateY(-20px);
 }
