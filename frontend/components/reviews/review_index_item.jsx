@@ -101,26 +101,28 @@ class ReviewIndexItem extends React.Component {
     const first = author.first_name;
     const last = author.last_name;
 
-    return(
+    return (
       <div className="speech-bubble">
-      <p>{review.body} </p>
-            <p className="review-score">
-              {" "}
-              🥔{review.score} {first} {last}{" "}
-            </p>
+            <div className="review-inner">
+                <p>{review.body} </p>
+                <p className="review-score">
+                    {" "}
+                    🥔{review.score} {first} {last}{" "}
+                </p>
 
-            {this.props.currentUserId === author_id ? (
-              <button onClick={() => this.props.deleteReview(review.id)}>
-                Delete
-              </button>
-            ) : null}
-            {this.props.currentUserId === author_id ? (
-              <button onClick={() => this.setState({ open: true })}>
-                Update
-              </button>
-            ) : null}
-          </div>
-    )
+                {this.props.currentUserId === author_id ? (
+                    <button onClick={() => this.props.deleteReview(review.id)}>
+                    Delete
+                    </button>
+                ) : null}
+                {this.props.currentUserId === author_id ? (
+                    <button onClick={() => this.setState({ open: true })}>
+                    Update
+                    </button>
+                ) : null}
+            </div>
+      </div>
+    );
   }
 
 

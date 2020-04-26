@@ -388,15 +388,15 @@
 .dropdown-trigger:hover > .dropdown-items{
     display: block;
     width: 100px;
-    left: 10px;
+    right: 10px;
     border-radius: 7px;
 }
 
 .dropdown-btn > li:hover {
     display: block;
-    background-color: white;
+    background-color: rgb(116, 209, 9);
     cursor: pointer;
-    width: 25px;
+    width: 50px;
     height: 25px;
 }
 
@@ -419,9 +419,10 @@ ul {
     background-color: white;
     font-weight: bold;
     font-size: 15px;
-    margin: 10px; 
+    margin: 0px; 
     padding: 10px;
-    border: black;
+    border-style: solid;
+    border-color: black;
     border-radius: 3px;
 }
 
@@ -563,11 +564,11 @@ input[type="text"] {
     position: relative; 
     background: white;
     border-radius: .4em; 
-    height: 150px;
+    max-height: 100%;
     width: 300px; 
     color: black;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
     border-style: solid;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
     border: black;
     margin: 10px;
     padding: 10px;
@@ -595,7 +596,6 @@ input[type="text"] {
 .review-container{
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .movie-detail-container{
