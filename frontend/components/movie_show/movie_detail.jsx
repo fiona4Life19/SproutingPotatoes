@@ -36,8 +36,8 @@ class MovieDetail extends React.Component {
 
             <iframe
               className="review-vid"
-              width="560"
-              height="315"
+              width="460"
+              height="515"
               src="https://www.youtube.com/embed/eQd4o3UWsvc"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; 
                     picture-in-picture"

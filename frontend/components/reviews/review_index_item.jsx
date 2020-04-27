@@ -31,10 +31,12 @@ class ReviewIndexItem extends React.Component {
 
   highlightStars(num) {
 
+    debugger
     this.setState({score: num})
 
         for(let i = 0; i < num; i += 1) {
             let star = document.getElementById(`star${i}`)
+            debugger
             star.className="yellow-btn fas fa-star fa-3x"
         }
         for(let i = num; i < 5; i += 1) {
@@ -91,6 +93,20 @@ class ReviewIndexItem extends React.Component {
       </div>
     );
   }
+
+  starScore(score) {
+      let roundedScore = Math.round(score);
+      let starArray = [];
+      for(let i = 0; i < roundedScore; i += 1) {
+        starArray.push( <i className="yellow-btn fas fa-star"></i> );
+      }
+
+      for(let i = 0; i < 5 - roundedScore; i += 1) {
+          starArray.push(<i class="fas fa-star"></i>);
+      }
+
+      return starArray
+  }
   
   
   reviewBubble() {
@@ -102,25 +118,34 @@ class ReviewIndexItem extends React.Component {
     const last = author.last_name;
 
     return (
-      <div className="speech-bubble">
-            <div className="review-inner">
-                <p>{review.body} </p>
-                <p className="review-score">
-                    {" "}
-                    🥔{review.score} {first} {last}{" "}
-                </p>
+      <div>
+        <div className="speech-bubble">
+          <div className="review-inner">
+            <p className="review-score">{this.starScore(review.score)}</p>
+            <p>{review.body} </p>
 
-                {this.props.currentUserId === author_id ? (
-                    <button onClick={() => this.props.deleteReview(review.id)}>
-                    Delete
-                    </button>
-                ) : null}
-                {this.props.currentUserId === author_id ? (
-                    <button onClick={() => this.setState({ open: true })}>
-                    Update
-                    </button>
-                ) : null}
-            </div>
+            {this.props.currentUserId === author_id ? (
+              <button
+                className="edit-delete-buttons"
+                onClick={() => this.props.deleteReview(review.id)}
+              >
+                Delete
+              </button>
+            ) : null}
+            {this.props.currentUserId === author_id ? (
+              <button
+                className="edit-delete-buttons"
+                onClick={() => this.setState({ open: true })}
+              >
+                Update
+              </button>
+            ) : null}
+          </div>
+        </div>
+        <div className="subreview-div">
+          <i class="fas fa-user-circle fa-3x"></i> 
+          <p className="review-name">{first} {last} </p>
+        </div>
       </div>
     );
   }

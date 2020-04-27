@@ -31,11 +31,21 @@ import { Link } from "react-router-dom"
                                 &nbsp;&nbsp;
 
                                 <div className="dropdown-trigger">
-                                    <button className="dropdown-btn" >{currentUser.first_name} ▾ </button>
+                                     <button className="dropdown-btn" >{currentUser.first_name} 
+                                        <span>   ▾ </span>
+                                     </button>
                                    
                                     <ul className="dropdown-items">
                                         <li className="dropdown-li">
-                                            <button className="signout-btn" onClick={signout}>signout</button>
+
+                                        <div className="upper-dropdown">  
+                                            <i className="dropdown-user fas fa-user fa-3x"> </i> 
+                                            <p className="dropdown-name">{currentUser.first_name} {currentUser.last_name}</p>
+                                        </div>  
+                                            
+                                            <button className="signout-btn" onClick={signout}>
+                                                <span href="#" className="inner-button">Log Out</span>
+                                            </button>
                                         </li>
                                     </ul>
                                 </div>
