@@ -68,7 +68,7 @@ class ReviewForm extends React.Component {
 
     return (
       <div class="movie-review-form">
-          
+
         <button
           id="star0"
           className={`${btn_class} fas fa-star fa-3x`}
@@ -99,15 +99,15 @@ class ReviewForm extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <textarea
-            cols="110"
-            rows="20"
+            className="review-text"
+            cols="70"
+            rows="10"
             value={this.state.body}
             onChange={this.update("body")}
           />
 
           <input className="submit-button" type="submit" />
         </form>
-        <button className="cancel">Cancel</button>
       </div>
     );
   }

@@ -31,63 +31,86 @@ class MovieDetail extends React.Component {
 
 
         return (
-        <div>
-            <img className="main-movie-pic" src={movie.photoUrl} alt="" />
+          <div className="">
+            <div className="upper-show">
+              <img className="main-movie-pic" src={movie.photoUrl} alt="" />
 
-            <iframe
-              className="review-vid"
-              width="460"
-              height="515"
-              src="https://www.youtube.com/embed/eQd4o3UWsvc"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+              <iframe
+                className="review-vid"
+                width="460"
+                height="515"
+                src="https://www.youtube.com/embed/eQd4o3UWsvc"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; 
                     picture-in-picture"
-            ></iframe>
+              ></iframe>
+            </div>
 
-            <h1 className="movie-info-header"> MOVIE INFO </h1>
-                <div className="movie-info">
-                    <div className="movie-synopsis-container">
-                        <p className="movie-synopsis"> {movie.synopsis} </p>
-                    </div>
-              
-                    <div className="movie-detail-container">
-                        <p className="movie-li-item">Genre: {movie.genre} </p>
-                        <p className="movie-li-item">Release Date: {movie.release_date}</p>
-                        <p className="movie-li-item"> Average Score: {movie.score} </p>
-                        <p className="movie-li-item">Rating: {movie.rate} </p>
-                        <p className="movie-li-item">Runtime: {movie.runtime} </p>
-                    </div>
+            <div className="red-divider">
+              <div className="detail-header-div">MOVIE INFO</div>
+            </div>
+
+            <div className="movie-info">
+              <div className="movie-synopsis-container">
+                <p className="movie-synopsis"> {movie.synopsis} </p>
+              </div>
+
+              <div className="movie-detail-container">
+                <p className="movie-li-item">Genre: {movie.genre} </p>
+                <p className="movie-li-item">
+                  Release Date: {movie.release_date}
+                </p>
+                <p className="movie-li-item"> Average Score: {movie.score} </p>
+                <p className="movie-li-item">Rating: {movie.rate} </p>
+                <p className="movie-li-item">Runtime: {movie.runtime} </p>
+              </div>
+            </div>
+
+            <div className="red-divider">
+              <div className="detail-header-div">RATE AND REVIEW</div>
+            </div>
+
+            <div className="rate-review-container">
+              <i className="WANT-TO-SEE-detail fas fa-plus-circle"> WANT TO SEE</i>
+
+              <button
+                className="review-button"
+                onClick={() => openModal("review")}
+              >
+                <div className="review-button-star-div">
+                  <div className="review-user-container">
+                    <i className="review-user fas fa-user fa-3x"> </i>
+                    <p className="review-button-name">
+                      {" "}
+                      {currentUser
+                        ? `${
+                            currentUser.first_name
+                          } ${currentUser.last_name.slice(0, 1)}`
+                        : null}{" "}
+                    </p>
+                  </div>
+
+                  <div>
+                    <i className="stars fas fa-star fa-3x"> </i>
+                    <i className="stars" class="fas fa-star fa-3x"></i>
+                    <i className="stars" class="fas fa-star fa-3x"></i>
+                    <i className="stars" class="fas fa-star fa-3x"></i>
+                    <i className="stars" class="fas fa-star fa-3x"></i>
+                  </div>
                 </div>
 
-            <h1 className="rate-and-review-header"> RATE AND REVIEW </h1>
-                <div className="rate-review-container">
-                    <i class="fas fa-plus-circle"> WANT TO SEE</i>
+                <textarea
+                  className="review-text"
+                  cols="70"
+                  rows="10"
+                  value="What did you think of the movie?"
+                />
+              </button>
+            </div>
 
-                        <button className="review-button" onClick={() => openModal("review")} >
+            <div className="red-divider">
+              <div className="detail-header-div">REVIEWS</div>
+            </div>
 
-                                <div className="review-button-star-div">
-                                    <div className="review-user-container">
-                                        <i className="review-user fas fa-user fa-3x"> </i>
-                                        <p className="review-button-name"> {currentUser ? `${currentUser.first_name} ${currentUser.last_name.slice(0,1)}` : null} </p>
-                                    </div>    
-
-                                    <div>
-                                        <i className="stars fas fa-star fa-3x"> </i>
-                                        <i className="stars" class="fas fa-star fa-3x"></i>
-                                        <i className="stars" class="fas fa-star fa-3x"></i>
-                                        <i className="stars" class="fas fa-star fa-3x"></i>
-                                        <i className="stars" class="fas fa-star fa-3x"></i>
-                                    </div>
-                                </div>
-
-                                <textarea
-                                    cols="100"
-                                    rows="15"
-                                    value="What did you think of the movie?"
-                                />
-                        </button>
-                </div>
-
-            <h1 className="reviews-header"> REVIEWS </h1>
             <div className="review-container">
               {reviews.map((review) => (
                 <ReviewIndexItem
@@ -102,13 +125,15 @@ class MovieDetail extends React.Component {
               ))}
             </div>
 
-            <h1 className="cast-header"> CAST </h1>
+            <div className="red-divider">
+              <div className="detail-header-div">CAST</div>
+            </div>
             <div className="castings-container">
               {actors.map((actor) => (
                 <ActorsIndexItem actor={actor} key={actor.id} />
               ))}
             </div>
-        </div>
+          </div>
         );
     }
 }

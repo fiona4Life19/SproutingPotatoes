@@ -1,5 +1,6 @@
 import React from "react"
 
+
 class ReviewIndexItem extends React.Component {
     constructor(props) {
         super(props);
@@ -49,9 +50,9 @@ class ReviewIndexItem extends React.Component {
     let btn_class = !this.state.yellow ? "fa-star" : "yellow-btn"
 
     return (
-      <div className="movie-review-form">
-        <div className="modal-background">
-          <div className="modal-child">
+      <div className="modal-background">
+        <div className="modal-child">
+          <div className="movie-review-form">
             <button
               id="star0"
               className={`${btn_class} fas fa-star fa-3x`}
@@ -78,15 +79,18 @@ class ReviewIndexItem extends React.Component {
               onClick={() => this.highlightStars(5)}
             ></button>
 
+            <p className="reviewform-question"> What did you think of the movie?</p>
+
             <form onSubmit={this.handleSubmit}>
               <textarea
-                cols="100"
-                rows="15"
+                className="review-text"
+                cols="70"
+                rows="10"
                 value={this.state.body}
                 onChange={this.handleUpdate("body")}
               />
 
-              <button type="submit">Update </button>
+              <button className="submit-button" type="submit">Submit </button>
             </form>
           </div>
         </div>
@@ -122,7 +126,7 @@ class ReviewIndexItem extends React.Component {
         <div className="speech-bubble">
           <div className="review-inner">
             <p className="review-score">{this.starScore(review.score)}</p>
-            <p>{review.body} </p>
+            <p className="review-speech-bubble-text">{review.body} </p>
 
             {this.props.currentUserId === author_id ? (
               <button

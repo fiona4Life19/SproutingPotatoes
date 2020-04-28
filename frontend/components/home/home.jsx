@@ -5,6 +5,7 @@ import Carousuel from "../carousuel/carousuel"
 // import MovieBrowserContainer from '../movieBrowser/movie_browser_container'
 // import MovieBrowser from "../movieBrowser/movie_browser_presentation"
 import MovieIndex from "../movieBrowser/movie_index"
+import Carousel2 from "../carousuel/carousel_2"
 
 
 class Home extends React.Component { 
@@ -45,10 +46,42 @@ class Home extends React.Component {
             </div>
 
             <div className="movie-index">
-              {movies.map((movie) => 
-                <MovieIndex key={movie.id} movie={movie} fetchMovie={fetchMovie} />
-              )}
+              {movies.map((movie) => (
+                <MovieIndex
+                  key={movie.id}
+                  movie={movie}
+                  fetchMovie={fetchMovie}
+                />
+              ))}
             </div>
+
+            <Carousel2 movies={movies} fetchMovie={fetchMovie} />
+
+            {/* <div className="wrapper">
+              <section id="section1">
+                <a href="#section3">←</a>
+                <div class="item">
+                  <img
+                    src="https://www.dramamilk.com/wp-content/uploads/2019/10/Joker-movie-dominates-Korean-box-office-thumbnail.jpg-copy.jpg"
+                    alt=""
+                  />
+                </div>
+
+                <a href="#section2">→</a>
+              </section>
+
+              <section id="section2">
+                <a href="#section1">←</a>
+
+                <a href="#section3">→</a>
+              </section>
+
+              <section id="section3">
+                <a href="#section2">←</a>
+
+                <a href="#section1">→</a>
+              </section>
+            </div> */}
           </div>
         );
     }

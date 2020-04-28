@@ -19,19 +19,21 @@ class MovieIndexItem extends React.Component {
 
     render() {
       const {movie} = this.props
-      return(
+      return (
         <div className="cards" onClick={this.handleClick}>
           <div className="">
             <img className="card-img" src={movie.photoUrl} alt="" />
           </div>
 
           <div className="">
-            <h4 className="card-title">{movie.title}</h4> 
+            <h4 className="card-title">{movie.title}</h4>
             <p> 🥔{movie.score} </p>
             <a href="#" className="btn btn-outline-sucess"></a>
           </div>
+
+          
         </div>
-      ) 
+      ); 
     }
 }
 

@@ -15,6 +15,8 @@
  */
 
 
+
+
  .main-div{
      background-color: white;
  }
@@ -147,7 +149,7 @@
     border: none;
     display: flex;
     align-items: center;
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-family: 'Libre Franklin', sans-serif;
     transform: translateY(3px)
 }
 
@@ -164,7 +166,7 @@
     align-items: center;
     padding-left: 20px;
     transform: translateY(-8px);
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .right-nav{
@@ -182,7 +184,7 @@
 }
 
 .greeting-title {
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+    font-family: 'Libre Franklin', sans-serif;
     font: 17px;
     color: white;
 }
@@ -246,7 +248,7 @@
 }
 
 .modal-footer-text{
-    font-family: 'Franklin Gothic Medium', Arial, sans-serif; 
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 12px; 
 }
 
@@ -260,7 +262,7 @@
      border: none;
      font: 20px;
      font-weight: bold;
-     font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+     font-family: 'Libre Franklin', sans-serif;
      color: #3976dc;
      transform: translateY(1px);
  }
@@ -317,7 +319,7 @@
 .actor-search{
     text-decoration: none;
     color: white;
-    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 20px;
     font-weight: bold;
     padding-left: 50px;
@@ -326,7 +328,7 @@
 .movie-search{
     text-decoration: none;
     color: white;
-    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 20px;
     font-weight: bold;
     padding-right: 50px;
@@ -341,7 +343,7 @@
 }
 
 .user {
-    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-family: 'Libre Franklin', sans-serif;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -364,7 +366,7 @@
     font-size: 20px;
     transform: translateY(-10px);
     color: white;
-    font-family: "Franklin Gothic Medium', sans-serif";
+    font-family: 'Libre Franklin', sans-serif;
     font-weight: bold;
 }
 
@@ -388,7 +390,7 @@
 .dropdown-trigger:hover > .dropdown-items{
     display: block;
     width: 100px;
-    right: 100px;
+    right: 140px;
     border-radius: 7px;
 }
 
@@ -408,7 +410,7 @@ ul {
 
 .dropdown-li:hover {
     display: block;
-    font-family: 'Franklin Gothic FS Book sans-serif';
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 15px;
     cursor: pointer;
 }
@@ -416,19 +418,18 @@ ul {
 .dropdown-li {
     background-color: white;
     font-size: 15px;
-    width: 200px;
-    height: 150px;
+    width: 240px;
+    height: 200px;
     position: relative;
-    border-style: solid;
     z-index: 1;
     margin: 0px; 
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 .signout-btn{
     font-size: 20px;
-    font-family: 'Franklin Gothic FS Book sans-serif';
+    font-family: 'Libre Franklin', sans-serif;
     border: none;
     transform: translateX(-7px);
     padding: 5px;
@@ -446,6 +447,10 @@ ul {
 
 input[type="text"] {
     font-size: 13px;
+}
+
+.review-text{
+    font-size: 18px;
 }
 
 
@@ -469,14 +474,13 @@ input[type="text"] {
     padding: 10px;
     border: black;
     border-radius: 6px;
-   
 }
 
 .card:hover {
     display: block;
     color: #fa320a;
     font-weight: bold;
-    font-family: "Franklin Gothic Medium', Arial, sans-serif";
+    font-family: 'Libre Franklin', sans-serif;
     font-size: 15px;
     cursor: pointer;
 }
@@ -555,6 +559,8 @@ input[type="text"] {
 .castings-container{
     display: flex;
     width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .main-movie-pic {
@@ -611,7 +617,7 @@ input[type="text"] {
     margin-top: 0px;
     margin-bottom: 0px;
     padding: 5px;
-    font-family: 'Franklin Gothic FS Book sans-serif';
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .review-score{
@@ -621,78 +627,6 @@ input[type="text"] {
 
 .movie-detail-header{
     color: black
-}
-
-.reviews-header:before{
-    content: "";
-    background: red;
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 30px;
-    height: 25px;
-}
-
-.movie-info-header:before{
-    content: "";
-    background: red;
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 30px;
-    height: 25px;
-}
-
-.cast-header:before{
-    content: "";
-    background: red;
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 30px;
-    height: 25px;
-}
-
-.rate-and-review-header:before{
-    content: "";
-    background: red;
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 30px;
-    height: 25px;
-}
-
-.reviews-header:after{
-    content: "";
-    background: red; 
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 1125px;
-    height: 25px;
-}
-
-.cast-header:after{
-    content: "";
-    background: red; 
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 1190px;
-    height: 25px;
-}
-
-.rate-and-review-header:after{
-    content: "";
-    background: red; 
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 975px;
-    height: 25px;
-}
-
-.movie-info-header:after{
-    content: "";
-    background: red; 
-    display: inline-block; 
-    transform: translateY(3px);
-    width: 1075px;
-    height: 25px;
 }
 
 .fa-star{
@@ -755,12 +689,12 @@ input[type="text"] {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
     padding: 35px 35px 35px 35px;
     border-radius: 3px;
-    margin-left: 500px;
+    margin-left: 550px;
 }
 
 .movie-synopsis {
     font-size: 20px;
-    font-family: 'Franklin Gothic FS Book sans-serif';
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .movie-synopsis-container{
@@ -780,7 +714,7 @@ input[type="text"] {
 
 .fa-plus-circle{
     color:  #3976dc;
-    transform: translateY(-40px);
+    transform: translateY(10px);
 }
 
 .dropdown-user{
@@ -801,6 +735,7 @@ input[type="text"] {
 
 .dropdown-name{
     transform: translateY(-16px);
+    font-family: 'Libre Franklin', sans-serif;
     margin-left: 5px;
     font-size: 20px;
 }
@@ -838,10 +773,10 @@ input[type="text"] {
     background-color:  #3976dc;
     color: white;
     width: 650px;
-    padding: 12px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 31px;
+    margin-left: 42px;
     font-size: 20px;
     margin-top: 5px;
 }
@@ -854,10 +789,10 @@ input[type="text"] {
     background-color:  #3976dc;
     color: white;
     width: 650px;
-    padding: 12px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 31px;
+    margin-left: 42px;
     font-size: 20px;
     margin-top: 5px;
 }
@@ -868,8 +803,8 @@ input[type="text"] {
 }
 
 .reviewform-question{
-    font-size: 25px;
-    font-family: 'Franklin Gothic FS Book sans-serif';
+    font-size: 30px;
+    font-family: 'Libre Franklin', sans-serif;
 }
 
 .review-vid{
@@ -888,6 +823,54 @@ input[type="text"] {
     transform: translateY(-15px);
     font-size: 17px;
     margin-left: 10px;
-    font-family: 'Franklin Gothic FS Book sans-serif';
+    font-family: 'Libre Franklin', sans-serif;
 }
 
+.review-speech-bubble-text{
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.red-divider{
+    background-color:red;
+    height: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.detail-header-div{
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    margin-left: 35px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: bold;
+    font-size: 30px;
+    transform: translateY(-3px);
+}
+
+.rate-review-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.review-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.upper-show{
+    margin-bottom: 30px;
+}
+
+
+
+.movie-info{
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.WANT-TO-SEE-detail{
+    margin-left: 25px;
+}
