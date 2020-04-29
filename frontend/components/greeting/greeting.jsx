@@ -28,11 +28,10 @@ import { Link } from "react-router-dom"
 
                     <div className="right-nav-signedin">
                             <i className="fas fa-user"></i>
-                                &nbsp;&nbsp;
 
                                 <div className="dropdown-trigger">
                                      <button className="dropdown-btn" >{currentUser.first_name} 
-                                        <span>   ▾ </span>
+                                        <span className="dropdown-arrow">  ▾ </span>
                                      </button>
                                    
                                     <ul className="dropdown-items">
