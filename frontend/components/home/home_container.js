@@ -9,7 +9,7 @@ const mSTP = (state) => ({
 
 const mDTP = (dispatch) => ({
     fetchMovies: () => dispatch(fetchMovies()),
-    fetchMovie: (movieId) => dispatch(fetchMovie(movieId))
+    fetchMovie: (movieId) => dispatch(fetchMovie(movieId)),
 })
 
 export default connect(mSTP, mDTP)(Home)

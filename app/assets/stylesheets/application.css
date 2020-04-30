@@ -161,7 +161,7 @@
     color: white;
     text-decoration: none;
     font-weight: bolder;
-    font-size: 35px;
+    font-size: 30px;
     width: 25px;
     display: flex;
     align-items: center;
@@ -393,7 +393,7 @@
 .dropdown-trigger:hover > .dropdown-items{
     display: block;
     width: 100px;
-    right: 140px;
+    right: 160px;
     border-radius: 7px;
 }
 
@@ -730,7 +730,7 @@ input[type="text"] {
 .upper-dropdown{
     display: flex;
     border-bottom: 1px solid black;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
 }
 
 .upper-dropdown:hover {
