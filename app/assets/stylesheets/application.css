@@ -386,7 +386,6 @@
     position: absolute;
     display: none;
     width: 50px;
-    font-size: 15px;
     border: black;
 }
 
@@ -414,13 +413,11 @@ ul {
 .dropdown-li:hover {
     display: block;
     font-family: 'Libre Franklin', sans-serif;
-    font-size: 15px;
     cursor: pointer;
 }
 
 .dropdown-li {
     background-color: white;
-    font-size: 15px;
     width: 240px;
     height: 200px;
     position: relative;
@@ -722,7 +719,11 @@ input[type="text"] {
 }
 
 .dropdown-user{
-    color: grey;
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    background: grey;
+    padding-top: 5px;
+    height: 48px;
+    color: black;
     transform: translateY(7px);
     margin-left: 5px;
 }
@@ -730,12 +731,9 @@ input[type="text"] {
 .upper-dropdown{
     display: flex;
     border-bottom: 1px solid black;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
 }
 
-.upper-dropdown:hover {
-    background-color: rgb(241, 241, 241);
-}
 
 .dropdown-name{
     transform: translateY(-16px);
@@ -881,3 +879,31 @@ input[type="text"] {
     padding-left: 5px;
     transform: translateY(-50px);
 }
+
+.right-upper-dropdown{
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.dropdown-ratings{
+    margin: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.dropdown-ratings:hover{
+    cursor: pointer;
+    color:  rgb(34, 34, 155);
+}
+
+.dropdown-star{
+    margin-right: 5px;
+    color: gold;
+}
+
+.ratings-number{
+    margin-right: 5px;
+}
+

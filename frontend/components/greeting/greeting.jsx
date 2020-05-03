@@ -75,11 +75,14 @@ class Greeting extends React.Component {
                                     <li className="dropdown-li">
 
                                     <div className="upper-dropdown">
-                                        <i className="dropdown-user fas fa-user fa-3x"> </i>
+                                        <i className="dropdown-user fas fa-user fa-3x fa-gradient"> </i>
+
+                                    <div className="right-upper-dropdown">
                                         <p className="dropdown-name">{this.props.currentUser.first_name} {this.props.currentUser.last_name}</p>
-                                        <p>{sum}</p>
+                                        <p className="dropdown-ratings"> <i className="dropdown-star fas fa-star"></i> <span className="ratings-number">{sum} </span> Ratings</p>
                                     </div>
 
+                                    </div>
                                         <button className="signout-btn" onClick={this.props.signout}>
                                             <span href="#" className="inner-button">Log Out</span>
                                         </button>
