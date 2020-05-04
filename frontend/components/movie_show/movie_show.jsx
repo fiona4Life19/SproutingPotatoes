@@ -19,7 +19,7 @@ class MovieShow extends React.Component {
 
         const { movie, 
                 actors, 
-                reviews, 
+                movieReviews, 
                 authors, 
                 currentUserId, 
                 deleteReview, 
@@ -40,7 +40,7 @@ class MovieShow extends React.Component {
                     <MovieDetail   
                         movie={movie} 
                         actors={actors} 
-                        reviews={reviews} 
+                        movieReviews={movieReviews} 
                         authors={authors}
                         currentUserId={currentUserId}
                         deleteReview={deleteReview}

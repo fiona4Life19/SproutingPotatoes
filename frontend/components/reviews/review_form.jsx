@@ -8,14 +8,9 @@ class ReviewForm extends React.Component {
     this.state = {
       // score: this.props.review.score ? this.props.review.score : null,
       // body: this.props.review.body ? this.props.review.body : ""
-      score: 5,
-      body: "",
-    //   one: "Oof, that was rotten.",
-    //   two: "Meh, it passed the time.",
-    //   three: "it's good - I'd reccommend it!",
-    //   four: "Awesome!",
-    //   five: "So Fresh: Absolute, Must See!"
-      starComment: false
+        score: 5,
+        body: "",
+        scoreString: "Rate this Movie."
     };
 
     this.hoverStars = this.hoverStars.bind(this);
@@ -30,8 +25,18 @@ class ReviewForm extends React.Component {
   }
 
   highlightStars(num) {
-    this.setState({ score: num });
+    let ratingStrings = [
+      "rate this movie",
+      "Oof, that was rotten.",
+      "Meh, it passed the time",
+      "It's good - I'd reccommend it!",
+      "Awesome!",
+      "So Fresh: Absolute, must see!",
+    ];
 
+    this.setState({ score: num, scoreString: ratingStrings[num]});
+    debugger
+  
     for (let i = 0; i < num; i += 1) {
       let star = document.getElementById(`star${i}`);
       star.className = "yellow-btn fas fa-star fa-3x";
@@ -43,6 +48,17 @@ class ReviewForm extends React.Component {
   }
 
     hoverStars(num) {
+        let ratingStrings = [
+          "rate this movie",
+          "Oof, that was rotten.",
+          "Meh, it passed the time",
+          "It's good - I'd reccommend it!",
+          "Awesome!",
+          "So Fresh: Absolute, must see!",
+        ];
+
+        this.setState({scoreString: ratingStrings[num]})
+
         for (let i = 0; i < num; i += 1) {
             let star = document.getElementById(`star${i}`);
             star.className = "yellow-btn fas fa-star fa-3x";
@@ -65,16 +81,6 @@ class ReviewForm extends React.Component {
 
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
-  }
-
-  function() {
-    $(".fa-star").hover(function () {
-      $(".fa-star").addClass("show");
-    });
-
-    $(".fa-star").mouseleave(function () {
-      $(".fa-star").removeClass("show");
-    });
   }
 
   render() {
@@ -113,7 +119,7 @@ class ReviewForm extends React.Component {
           onClick={() => this.highlightStars(5)}
         ></button>
 
-        <p>{this.state.starComment ? }</p>
+        <p>{this.state.scoreString}</p>
 
         <p className="reviewform-question"> What did you think of the movie?</p>
 

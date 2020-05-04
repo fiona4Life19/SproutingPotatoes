@@ -17,7 +17,7 @@ class MovieDetail extends React.Component {
 
         const {
             movie, 
-            reviews, 
+            movieReviews, 
             actors, 
             authors, 
             currentUserId, 
@@ -112,7 +112,7 @@ class MovieDetail extends React.Component {
             </div>
 
             <div className="review-container">
-              {reviews.map((review) => (
+              {movieReviews.map((review) => (
                 <ReviewIndexItem
                   key={review.id}
                   review={review}

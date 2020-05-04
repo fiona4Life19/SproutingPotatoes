@@ -719,11 +719,16 @@ input[type="text"] {
 }
 
 .dropdown-user{
-    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-    background: grey;
+    font-size: 40px;      
+    background: -moz-linear-gradient(top,white 0%,grey 100%); 
+    background: -webkit-linear-gradient(top, #e72c83 0%,#a742c6 100%); 
+    background: linear-gradient(to bottom, white 25%, grey 100%);
+    -webkit-background-clip: text; 
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
     padding-top: 5px;
     height: 48px;
-    color: black;
     transform: translateY(7px);
     margin-left: 5px;
 }
@@ -905,5 +910,12 @@ input[type="text"] {
 
 .ratings-number{
     margin-right: 5px;
+}
+
+.user-background{
+    background: linear-gradient(white, grey);
+    width: 60px;
+    height: 60px;
+
 }
 

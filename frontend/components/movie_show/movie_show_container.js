@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
     return{
     movieId: ownProps.match.params.movieId,
     movie: state.entities.movies[ownProps.match.params.movieId],
-    reviews: Object.values(state.entities.reviews),
+    movieReviews: Object.values(state.entities.reviews),
     actors: Object.values(state.entities.actors),
     authors: state.entities.users,
     currentUserId: state.session.currentUser ? state.session.currentUser.id : null,
