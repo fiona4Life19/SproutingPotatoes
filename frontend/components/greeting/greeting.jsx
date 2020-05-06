@@ -75,9 +75,9 @@ class Greeting extends React.Component {
                                     <li className="dropdown-li">
 
                                     <div className="upper-dropdown">
-                                    <div className="user-background">
-                                        <i className="dropdown-user fas fa-user fa-3x fa-gradient"> </i>
-                                    </div>
+                                        <div className="user-background">
+                                            <i className="dropdown-user fas fa-user fa-gradient"> </i>
+                                        </div>
 
                                     <div className="right-upper-dropdown">
                                         <p className="dropdown-name">{this.props.currentUser.first_name} {this.props.currentUser.last_name}</p>

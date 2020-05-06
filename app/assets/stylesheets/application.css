@@ -719,29 +719,30 @@ input[type="text"] {
 }
 
 .dropdown-user{
-    font-size: 40px;      
-    background: -moz-linear-gradient(top,white 0%,grey 100%); 
+    background: -moz-linear-gradient(top,rgb(241, 239, 239) 0%,  rgb(177, 176, 176) 100%); 
     background: -webkit-linear-gradient(top, #e72c83 0%,#a742c6 100%); 
-    background: linear-gradient(to bottom, white 25%, grey 100%);
+    background: linear-gradient(to bottom,rgb(241, 239, 239)25%, rgb(177, 176, 176) 100%);
     -webkit-background-clip: text; 
     -moz-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color:transparent;
-    padding-top: 5px;
-    height: 48px;
-    transform: translateY(7px);
+    -webkit-text-fill-color: transparent;
+    transform: translateY(3px) translateX(0px);
     margin-left: 5px;
+    padding-top: 5px;
+    box-shadow: rgba(0, 0, 0, 2.7);
+    position: absolute;
+    z-index: 6;
 }
 
 .upper-dropdown{
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(218, 215, 215);
     padding-bottom: 20px;
 }
 
 
 .dropdown-name{
-    transform: translateY(-16px);
+    transform: translateY(-22px);
     font-family: 'Libre Franklin', sans-serif;
     margin-left: 5px;
     font-size: 20px;
@@ -900,7 +901,7 @@ input[type="text"] {
 
 .dropdown-ratings:hover{
     cursor: pointer;
-    color:  rgb(34, 34, 155);
+    color:  rgb(88, 88, 190);
 }
 
 .dropdown-star{
@@ -912,10 +913,12 @@ input[type="text"] {
     margin-right: 5px;
 }
 
-.user-background{
-    background: linear-gradient(white, grey);
-    width: 60px;
-    height: 60px;
+.user-background {
+    background: rgb(177, 176, 176);
+    width: 50px;
+    height: 55px;
+    margin-left: 8px;
+    font-size: 2.8rem;
 
 }
 
