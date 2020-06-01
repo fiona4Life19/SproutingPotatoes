@@ -56,7 +56,7 @@ class Home extends React.Component {
               ))}
             </div>
 
-            <Carousel2 movies={movies} fetchMovie={fetchMovie} />
+            {/* <Carousel2 movies={movies} fetchMovie={fetchMovie} /> */}
 
             {/* <div className="wrapper">
               <section id="section1">
